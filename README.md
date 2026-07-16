@@ -1,12 +1,9 @@
-# SeaWorld Water Chemistry Console v3
+# SeaWorld Water Chemistry Console v4
 
 Changes:
-- Removed the dashboard KPI and status filler cards.
-- Added four large calculator launch tiles.
-- Added per-pool quick-reference tables:
-  - Soda ash dose for a +0.5 pH increase
-  - FC rise from a 5-minute chlorine feed
-  - CYA dose for a +1 ppm increase
-  - Sodium thiosulfate pentahydrate dose for a -1 ppm FC reduction
-
-Upload all files to the GitHub Pages repository root and commit to main.
+- Quick-reference tables are now mobile-first, two-column layouts.
+- Removed the separate pool-number column.
+- Pool numbers are shown with the body-of-water name, e.g. `501 - Cutback Cove`.
+- Removed the volume column from quick-reference tables.
+- Dose/result remains visible beside the body-of-water name without horizontal scrolling.
+- Cache updated to v4.

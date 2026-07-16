@@ -1,4 +1,4 @@
-const CACHE_NAME='seaworld-chemistry-console-v5';
+const CACHE_NAME='seaworld-chemistry-console-v6';
 const STATIC=['./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 
 self.addEventListener('install',event=>{

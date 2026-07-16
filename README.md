@@ -1,13 +1,15 @@
-# SeaWorld Water Chemistry Console v5
+# SeaWorld Water Chemistry Console v6
 
-Design:
-- Reference-inspired premium ocean header
-- Live local date and time
-- Online/offline status indicator
-- Four calculator cards in a fixed 2×2 layout
-- Custom inline SVG artwork for each calculator
-- Matching visual banner and theme inside every calculator
-- Existing calculator logic and mobile quick-reference tables retained
-- Network-first HTML loading to avoid stale cached versions
+Implemented refinements:
+1. Reorganized header into brand, description, and dedicated status areas.
+2. Reworked calculator hero banners to emphasize the action and artwork.
+3. Changed dashboard wording to concise operational actions.
+4. Grouped inputs into Pool, Current/Requested Change, and Target sections.
+5. Converted pool/readout data into compact metric cards.
+6. Strengthened result hierarchy with a primary result and four metric cards.
+7. Added color-intensity cues to quick-reference table values.
+8. Added breadcrumb-style calculator navigation.
+9. Enlarged calculator artwork.
+10. Added calculator-specific green, blue, amber, and red background tints.
 
-Deploy all files to the root of a GitHub Pages repository.
+Existing calculator logic, validation, alerts, and reference data are preserved.

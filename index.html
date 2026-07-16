@@ -323,10 +323,123 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
 .formula{background:#051020!important}
 .footer{color:#7190af!important}
 
+
+/* ===== Build v6 operational refinement ===== */
+.hero{min-height:220px}
+.hero-layout{
+  position:relative;z-index:2;display:grid;
+  grid-template-columns:minmax(0,1fr) 260px;
+  grid-template-areas:"brand status" "description status";
+  column-gap:28px;align-items:center;height:100%;
+}
+.hero-brand-block{grid-area:brand;display:flex;align-items:center;gap:18px;min-width:0}
+.hero-title-block h1{margin:0;font-size:clamp(33px,5vw,56px);line-height:.95;text-transform:uppercase;letter-spacing:.025em}
+.hero-subtitle{margin-top:8px;color:#4bdcff;font-size:clamp(16px,2.7vw,25px);font-weight:850;letter-spacing:.055em;text-transform:uppercase}
+.hero-description{grid-area:description;margin:16px 0 0 138px;max-width:550px;color:#e7effb;font-size:17px;line-height:1.42}
+.hero-status-block{
+  grid-area:status;align-self:stretch;display:flex;flex-direction:column;justify-content:center;
+  gap:12px;padding:18px;border-left:1px solid rgba(132,211,255,.22);
+  background:linear-gradient(90deg,rgba(2,18,43,.08),rgba(2,18,43,.42));border-radius:0 20px 20px 0
+}
+.status-label{font-size:11px;letter-spacing:.14em;color:#89cfff;font-weight:850}
+.status-online,.status-date,.status-time{display:flex;align-items:center;gap:9px;color:#f5f8fd}
+.status-online{font-size:17px}.status-date,.status-time{font-size:14px;color:#d4dfed}
+@media(max-width:720px){
+  .hero{min-height:300px}
+  .hero-layout{display:grid;grid-template-columns:1fr;grid-template-areas:"brand" "description" "status";gap:10px}
+  .hero-logo{width:76px;height:76px}
+  .hero-title-block h1{font-size:clamp(27px,9vw,40px)}
+  .hero-subtitle{font-size:clamp(13px,4.4vw,18px)}
+  .hero-description{margin:3px 0 0;max-width:72%;font-size:14px}
+  .hero-status-block{
+    margin-top:4px;padding:10px 12px;border-left:0;border-top:1px solid rgba(132,211,255,.22);
+    border-radius:12px;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:7px;background:rgba(1,17,39,.56)
+  }
+  .status-label{display:none}
+  .status-online,.status-date,.status-time{font-size:11px;justify-content:center;white-space:nowrap}
+}
+
+/* Dashboard action hierarchy */
+.launch-action{position:relative;z-index:2;font-size:14px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.launch-desc{font-size:14px!important;color:rgba(255,255,255,.80)!important}
+@media(max-width:620px){
+  .launch-action{font-size:10px}
+  .launch-desc{font-size:11px!important}
+}
+
+/* Calculator breadcrumb */
+.calculator-breadcrumb{
+  display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:10px 12px;
+  border:1px solid rgba(96,177,232,.24);border-radius:12px;background:rgba(3,17,36,.74);
+  color:#a7dfff;font-size:14px
+}
+.breadcrumb-separator{color:#55789c}.calculator-breadcrumb strong{color:#eef9ff}
+
+/* Operational calculator hero: 60% text / 40% art */
+.calc-visual{
+  grid-template-columns:minmax(0,1.4fr) minmax(150px,.75fr)!important;
+  min-height:230px!important;padding:24px 28px!important;gap:22px!important
+}
+.calc-visual-copy{text-align:left}
+.calc-kicker{font-size:12px;font-weight:850;letter-spacing:.14em;color:currentColor;opacity:.88}
+.calc-visual h2{font-size:clamp(30px,5vw,48px)!important;margin:7px 0 10px!important}
+.calc-visual p{font-size:17px!important;max-width:560px}
+.calc-visual-icon{width:190px!important;height:190px!important;justify-self:end}
+@media(max-width:600px){
+  .calc-visual{grid-template-columns:minmax(0,1fr) 125px!important;min-height:170px!important;padding:17px!important}
+  .calc-visual h2{font-size:clamp(23px,7vw,34px)!important}
+  .calc-visual p{font-size:13px!important}
+  .calc-visual-icon{width:125px!important;height:125px!important}
+}
+
+/* Per-calculator page tint */
+#sodaPanel{--accent:#52ef6e;background:radial-gradient(circle at 80% 0,rgba(41,180,88,.12),transparent 30%),linear-gradient(180deg,#061b19,#030c15)!important}
+#fcPanel{--accent:#27bfff;background:radial-gradient(circle at 80% 0,rgba(24,153,230,.14),transparent 30%),linear-gradient(180deg,#061a2c,#030c18)!important}
+#cyaPanel{--accent:#ffb51c;background:radial-gradient(circle at 80% 0,rgba(230,156,19,.13),transparent 30%),linear-gradient(180deg,#211707,#080d14)!important}
+#dechlorPanel{--accent:#ff4654;background:radial-gradient(circle at 80% 0,rgba(222,43,63,.13),transparent 30%),linear-gradient(180deg,#20080e,#080b13)!important}
+
+/* Inputs: clear SCADA-like grouping */
+.input-section-label{
+  margin:14px 0 7px;padding-top:12px;border-top:1px solid #1d3b5a;
+  color:var(--accent,#6bdcff);font-size:10px;font-weight:900;letter-spacing:.15em
+}
+.input-section-label:first-child{margin-top:0;padding-top:0;border-top:0}
+.field{padding:10px 11px;border:1px solid #1d3b5a;border-radius:12px;background:rgba(4,15,31,.44)}
+.field label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#bcd0e5}
+.field input,.field select{font-weight:700}
+
+/* Readouts become compact metric cards */
+.metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.metric-grid .readout{
+  display:block;padding:12px;border:1px solid #224766;border-radius:12px;
+  background:linear-gradient(180deg,rgba(14,36,63,.86),rgba(5,18,35,.90))
+}
+.metric-grid .readout span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#8fa9c2!important}
+.metric-grid .readout strong{display:block;margin-top:6px;text-align:left;font-size:18px;color:#f4f8ff}
+
+/* Results: primary result plus four equally prominent metric cards */
+.result{padding:22px!important;border-width:1px!important}
+.result .big{font-size:clamp(42px,8vw,68px)!important}
+.tiles{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+.tile{min-height:92px;display:flex;flex-direction:column;justify-content:center;padding:14px!important}
+.tile span{font-size:11px!important;text-transform:uppercase;letter-spacing:.055em}
+.tile b{font-size:21px!important}
+
+/* Quick-reference intensity cues */
+.ref-table tr.level-low td:last-child{color:#72f394!important}
+.ref-table tr.level-medium td:last-child{color:#f7dc63!important}
+.ref-table tr.level-high td:last-child{color:#ff9e45!important}
+.ref-table tr.level-critical td:last-child{color:#ff6874!important}
+.ref-table tr.level-low{background:linear-gradient(90deg,transparent,rgba(61,203,105,.035))}
+.ref-table tr.level-medium{background:linear-gradient(90deg,transparent,rgba(247,196,44,.045))}
+.ref-table tr.level-high{background:linear-gradient(90deg,transparent,rgba(247,125,44,.052))}
+.ref-table tr.level-critical{background:linear-gradient(90deg,transparent,rgba(236,57,74,.060))}
+
 </style>
 </head>
 <body>
 <div class="wrap">
+
 
 <section class="hero">
   <svg class="hero-wave" viewBox="0 0 700 330" preserveAspectRatio="none" aria-hidden="true">
@@ -345,10 +458,9 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
       <circle cx="225" cy="94" r="7"/><circle cx="267" cy="124" r="4"/><circle cx="392" cy="59" r="6"/><circle cx="458" cy="101" r="5"/><circle cx="555" cy="68" r="8"/>
     </g>
   </svg>
-  <div class="hero-inner">
-    <div class="hero-brand">
-      <div class="hero-logo">
-<svg viewBox="0 0 120 120" aria-hidden="true">
+  <div class="hero-layout">
+    <div class="hero-brand-block">
+      <div class="hero-logo"><svg viewBox="0 0 120 120" aria-hidden="true">
   <defs>
     <linearGradient id="wg1" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#e8fbff"/>
@@ -362,21 +474,22 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
   <path d="M18 69c13-4 20-15 26-29 10 9 23 16 39 14-10 4-16 11-18 20 15-10 29-11 40-4-9 2-17 8-21 18-15 14-42 18-63 3 13 1 25-2 35-10-15 4-27 0-38-12z" fill="url(#wg1)"/>
   <path d="M26 84c17 9 38 7 54-5 10-7 19-8 29-6-7 16-27 29-49 29-15 0-27-6-34-18z" fill="#dff8ff" opacity=".95"/>
   <path d="M31 88c18 5 34 1 48-10 8-6 16-7 24-5-11 16-28 23-45 23-10 0-19-3-27-8z" fill="#31b8ee"/>
-</svg>
-</div>
-      <div class="hero-copy">
+</svg></div>
+      <div class="hero-title-block">
         <h1>SeaWorld</h1>
-        <div class="subtitle">Water Chemistry Console</div>
-        <p>Operations dashboard for chemical dosing and water-quality decisions.</p>
+        <div class="hero-subtitle">Water Chemistry Console</div>
       </div>
     </div>
-    <div class="hero-meta">
-      <div class="meta-line">📅 <span id="headerDate">—</span></div>
-      <div class="meta-line">◷ <span id="headerTime">—</span></div>
-      <div class="meta-line"><span class="online-dot"></span><span id="onlineStatus">System Online</span></div>
-    </div>
+    <p class="hero-description">Operations dashboard for chemical dosing and water-quality decisions.</p>
+    <aside class="hero-status-block">
+      <div class="status-label">SYSTEM STATUS</div>
+      <div class="status-online"><span class="online-dot"></span><strong id="onlineStatus">System Online</strong></div>
+      <div class="status-date">📅 <span id="headerDate">—</span></div>
+      <div class="status-time">◷ <span id="headerTime">—</span></div>
+    </aside>
   </div>
 </section>
+
 
 
 <div class="tabs">
@@ -405,8 +518,7 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
  </g>
 </svg>
 </div>
-      <div class="launch-title">Soda Ash</div>
-      <div class="launch-desc">Raise pH to 7.6.</div>
+      <div class="launch-title">Dose Soda Ash</div><div class="launch-action">Raise pH</div><div class="launch-desc">Target pH 7.6</div>
     </button>
     <button class="launch-tile" onclick="showTab('fc')" aria-label="Open Chlorine Feed calculator">
       <div class="launch-art">
@@ -418,8 +530,7 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
  <path d="M67 102c2 10 10 16 20 17-15 6-30-4-31-19-1-12 7-24 17-38-6 19-9 30-6 40z" fill="#e8fbff" opacity=".72"/>
 </svg>
 </div>
-      <div class="launch-title">Chlorine Feed</div>
-      <div class="launch-desc">Increase free chlorine.</div>
+      <div class="launch-title">Increase Chlorine</div><div class="launch-action">Manual Feed</div><div class="launch-desc">Calculated runtime</div>
     </button>
     <button class="launch-tile" onclick="showTab('cya')" aria-label="Open CYA Dosing calculator">
       <div class="launch-art">
@@ -431,8 +542,7 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
  <path d="M59 79l13 14 29-31" fill="none" stroke="#6d4500" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 </div>
-      <div class="launch-title">CYA Dosing</div>
-      <div class="launch-desc">Raise stabilizer to 14 ppm.</div>
+      <div class="launch-title">Dose Stabilizer</div><div class="launch-action">Increase CYA</div><div class="launch-desc">Target 14 ppm</div>
     </button>
     <button class="launch-tile" onclick="showTab('dechlor')" aria-label="Open Dechlorination calculator">
       <div class="launch-art">
@@ -443,8 +553,7 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
  <path filter="url(#dd)" d="M64 33h32v55h24l-40 43-40-43h24z" fill="url(#dg)" stroke="#ffc6c9" stroke-width="2" stroke-linejoin="round"/>
 </svg>
 </div>
-      <div class="launch-title">Dechlorination</div>
-      <div class="launch-desc">Lower free chlorine.</div>
+      <div class="launch-title">Neutralize Chlorine</div><div class="launch-action">Lower FC</div><div class="launch-desc">Sodium thiosulfate</div>
     </button>
   </div>
 </section>
@@ -452,8 +561,19 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
 
 
 
-<section class="panel calculator-shell" id="sodaPanel"><div class="calculator-topbar"><button class="back-button" onclick="showTab('home')">← Dashboard</button><div class="calc-title">Soda Ash Calculator</div><div class="calc-visual soda"><div class="calc-visual-icon">
-<svg viewBox="0 0 160 160" aria-hidden="true">
+<section class="panel calculator-shell" id="sodaPanel">
+<div class="calculator-breadcrumb">
+  <button class="back-button" onclick="showTab('home')">← Dashboard</button>
+  <span class="breadcrumb-separator">/</span>
+  <strong>Soda Ash</strong>
+</div>
+<div class="calc-visual soda">
+  <div class="calc-visual-copy">
+    <span class="calc-kicker">SODA ASH</span>
+    <h2>Raise pH</h2>
+    <p>Staged sodium carbonate dosing • Target pH 7.6</p>
+  </div>
+  <div class="calc-visual-icon"><svg viewBox="0 0 160 160" aria-hidden="true">
  <defs>
   <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4fff6"/><stop offset="1" stop-color="#9fe7aa"/></linearGradient>
   <filter id="sd"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-opacity=".4"/></filter>
@@ -466,8 +586,8 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
   <circle cx="76" cy="83" r="12" fill="#2faf52"/>
   <path d="M76 72l7 9-7 9-7-9z" fill="#e8ffed"/>
  </g>
-</svg>
-</div><div class="calc-visual-copy"><h2>Soda Ash</h2><p>Calculate a staged sodium carbonate addition to raise pH toward the fixed 7.6 operating goal.</p></div></div></div>
+</svg></div>
+</div>
 <div class="grid">
 <div class="card">
 <h2>Soda Ash Inputs</h2>
@@ -535,15 +655,26 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
 <div class="note"><strong>Model limitation:</strong> Soda ash is scaled from 3.0 lb per 10,000 gallons for pH 6.0 → 7.6. Values below pH 6.0 are extrapolated from that same proportional model. Verify very low readings with a calibrated meter and use staged additions.</div>
 </section>
 
-<section class="panel calculator-shell" id="fcPanel"><div class="calculator-topbar"><button class="back-button" onclick="showTab('home')">← Dashboard</button><div class="calc-title">Chlorine Feed Calculator</div><div class="calc-visual fc"><div class="calc-visual-icon">
-<svg viewBox="0 0 160 160" aria-hidden="true">
+<section class="panel calculator-shell" id="fcPanel">
+<div class="calculator-breadcrumb">
+  <button class="back-button" onclick="showTab('home')">← Dashboard</button>
+  <span class="breadcrumb-separator">/</span>
+  <strong>Chlorine Feed</strong>
+</div>
+<div class="calc-visual fc">
+  <div class="calc-visual-copy">
+    <span class="calc-kicker">CHLORINE FEED</span>
+    <h2>Increase Free Chlorine</h2>
+    <p>Manual chemical-feed duration calculator</p>
+  </div>
+  <div class="calc-visual-icon"><svg viewBox="0 0 160 160" aria-hidden="true">
  <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bff4ff"/><stop offset=".55" stop-color="#21b9ff"/><stop offset="1" stop-color="#0766d9"/></linearGradient>
  <filter id="cd"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-opacity=".45"/></filter></defs>
  <circle cx="80" cy="80" r="67" fill="#063865" stroke="#20afff" stroke-width="3"/>
  <path filter="url(#cd)" d="M80 31c-17 27-35 46-35 69 0 20 16 35 35 35s35-15 35-35c0-23-18-42-35-69z" fill="url(#cg)" stroke="#caf5ff" stroke-width="2"/>
  <path d="M67 102c2 10 10 16 20 17-15 6-30-4-31-19-1-12 7-24 17-38-6 19-9 30-6 40z" fill="#e8fbff" opacity=".72"/>
-</svg>
-</div><div class="calc-visual-copy"><h2>Chlorine Feed</h2><p>Translate the desired free-chlorine increase into a manual chemical-feed duration for the selected body of water.</p></div></div></div>
+</svg></div>
+</div>
 <div class="grid">
 <div class="card">
 <h2>Chlorine Feed Inputs</h2>
@@ -611,15 +742,26 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
 </section>
 
 
-<section class="panel calculator-shell" id="cyaPanel"><div class="calculator-topbar"><button class="back-button" onclick="showTab('home')">← Dashboard</button><div class="calc-title">CYA Dosing Calculator</div><div class="calc-visual cya"><div class="calc-visual-icon">
-<svg viewBox="0 0 160 160" aria-hidden="true">
+<section class="panel calculator-shell" id="cyaPanel">
+<div class="calculator-breadcrumb">
+  <button class="back-button" onclick="showTab('home')">← Dashboard</button>
+  <span class="breadcrumb-separator">/</span>
+  <strong>CYA Dosing</strong>
+</div>
+<div class="calc-visual cya">
+  <div class="calc-visual-copy">
+    <span class="calc-kicker">CYA DOSING</span>
+    <h2>Dose Stabilizer</h2>
+    <p>Cyanuric acid dosing • Target CYA 14 ppm</p>
+  </div>
+  <div class="calc-visual-icon"><svg viewBox="0 0 160 160" aria-hidden="true">
  <defs><linearGradient id="yg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff6c7"/><stop offset=".45" stop-color="#fdbb24"/><stop offset="1" stop-color="#a85b00"/></linearGradient>
  <filter id="yd"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-opacity=".45"/></filter></defs>
  <circle cx="80" cy="80" r="67" fill="#65400a" stroke="#f2a900" stroke-width="3"/>
  <path filter="url(#yd)" d="M80 34l39 14v30c0 27-17 42-39 51-22-9-39-24-39-51V48z" fill="url(#yg)" stroke="#fff3bb" stroke-width="3"/>
  <path d="M59 79l13 14 29-31" fill="none" stroke="#6d4500" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</div><div class="calc-visual-copy"><h2>CYA Dosing</h2><p>Determine stabilizer addition to reach 14 ppm and identify chlorine-sensor calibration risk.</p></div></div></div>
+</svg></div>
+</div>
 <div class="grid">
 <div class="card">
 <h2>CYA Dosing Inputs</h2>
@@ -695,14 +837,25 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
 </section>
 
 
-<section class="panel calculator-shell" id="dechlorPanel"><div class="calculator-topbar"><button class="back-button" onclick="showTab('home')">← Dashboard</button><div class="calc-title">Dechlorination Calculator</div><div class="calc-visual dechlor"><div class="calc-visual-icon">
-<svg viewBox="0 0 160 160" aria-hidden="true">
+<section class="panel calculator-shell" id="dechlorPanel">
+<div class="calculator-breadcrumb">
+  <button class="back-button" onclick="showTab('home')">← Dashboard</button>
+  <span class="breadcrumb-separator">/</span>
+  <strong>Dechlorination</strong>
+</div>
+<div class="calc-visual dechlor">
+  <div class="calc-visual-copy">
+    <span class="calc-kicker">DECHLORINATION</span>
+    <h2>Neutralize Chlorine</h2>
+    <p>Sodium thiosulfate pentahydrate dosing</p>
+  </div>
+  <div class="calc-visual-icon"><svg viewBox="0 0 160 160" aria-hidden="true">
  <defs><linearGradient id="dg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff8a8f"/><stop offset=".45" stop-color="#ff3c49"/><stop offset="1" stop-color="#b80022"/></linearGradient>
  <filter id="dd"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-opacity=".45"/></filter></defs>
  <circle cx="80" cy="80" r="67" fill="#5c1420" stroke="#ff3c49" stroke-width="3"/>
  <path filter="url(#dd)" d="M64 33h32v55h24l-40 43-40-43h24z" fill="url(#dg)" stroke="#ffc6c9" stroke-width="2" stroke-linejoin="round"/>
-</svg>
-</div><div class="calc-visual-copy"><h2>Dechlorination</h2><p>Estimate sodium thiosulfate pentahydrate required to lower free chlorine to the selected goal.</p></div></div></div>
+</svg></div>
+</div>
 <div class="grid">
 <div class="card">
 <h2>Dechlorination Inputs</h2>
@@ -760,7 +913,7 @@ select,input{background:#061226!important;border-color:#29527d!important;color:#
 <div class="formula" id="dechlorFormula"></div>
 <div class="note"><strong>Dosing basis:</strong> 1.36 oz sodium thiosulfate pentahydrate crystals per 10,000 gallons per 1 ppm FC reduction. Add in stages and retest to avoid creating continuing chlorine demand.</div>
 </section>
-<div class="footer">Offline-capable PWA • Build v5 • Add to Home Screen from Safari</div>
+<div class="footer">Offline-capable PWA • Build v6 • Add to Home Screen from Safari</div>
 </div>
 
 <script>
@@ -1085,6 +1238,53 @@ updateCYA();
 updateDechlor();
 
 
+
+function enhanceCalculatorLayout(){
+  document.querySelectorAll('.calculator-shell').forEach(panel=>{
+    const inputCard=panel.querySelector('.grid .card:first-child .card-body');
+    if(!inputCard||inputCard.dataset.enhanced==='true')return;
+    inputCard.dataset.enhanced='true';
+
+    const fields=[...inputCard.querySelectorAll(':scope > .field')];
+    fields.forEach((field,index)=>{
+      const label=document.createElement('div');
+      label.className='input-section-label';
+      if(index===0)label.textContent='POOL';
+      else if(index===1)label.textContent=panel.id==='fcPanel'?'REQUESTED CHANGE':'CURRENT';
+      else label.textContent='TARGET';
+      field.before(label);
+    });
+
+    const readouts=[...inputCard.querySelectorAll(':scope > .readout')];
+    if(readouts.length){
+      const grid=document.createElement('div');
+      grid.className='metric-grid';
+      readouts[0].before(grid);
+      readouts.forEach(r=>grid.appendChild(r));
+    }
+  });
+
+  document.querySelectorAll('.reference-section tbody').forEach(tbody=>{
+    const rows=[...tbody.querySelectorAll('tr')];
+    const values=rows.map(row=>{
+      const text=row.lastElementChild?.textContent||'';
+      const n=parseFloat(text.replace(/[^0-9.-]/g,''));
+      return Number.isFinite(n)?n:0;
+    }).sort((a,b)=>a-b);
+    if(!values.length)return;
+    const q1=values[Math.floor((values.length-1)*.25)];
+    const q2=values[Math.floor((values.length-1)*.50)];
+    const q3=values[Math.floor((values.length-1)*.75)];
+    rows.forEach(row=>{
+      const n=parseFloat((row.lastElementChild?.textContent||'').replace(/[^0-9.-]/g,''));
+      if(!Number.isFinite(n))return;
+      const level=n<=q1?'level-low':n<=q2?'level-medium':n<=q3?'level-high':'level-critical';
+      row.classList.add(level);
+    });
+  });
+}
+enhanceCalculatorLayout();
+
 function updateHeaderClock(){
   const now=new Date();
   const dateOptions={month:'short',day:'numeric',year:'numeric'};
@@ -1110,7 +1310,7 @@ window.addEventListener('offline',updateOnlineState);
 
 if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){
   window.addEventListener('load',function(){
-    navigator.serviceWorker.register('./service-worker.js?build=v5',{updateViaCache:'none'})
+    navigator.serviceWorker.register('./service-worker.js?build=v6',{updateViaCache:'none'})
       .then(function(reg){ return reg.update(); })
       .catch(function(){});
   });

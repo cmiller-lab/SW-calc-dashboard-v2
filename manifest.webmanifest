@@ -1,24 +1,22 @@
 {
   "name": "SeaWorld Water Chemistry Console",
   "short_name": "SW Chemistry",
-  "description": "Chemical dosing calculators for SeaWorld aquatic systems.",
-  "start_url": "./",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#020b18",
+  "background_color": "#04101e",
   "theme_color": "#041b3d",
+  "description": "Pool chemical dosing calculators and field utilities.",
   "icons": [
     {
       "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }

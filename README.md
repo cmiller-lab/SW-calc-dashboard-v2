@@ -1,15 +1,19 @@
-# SeaWorld Water Chemistry Console v6
+# SeaWorld Water Chemistry Console v7
 
-Implemented refinements:
-1. Reorganized header into brand, description, and dedicated status areas.
-2. Reworked calculator hero banners to emphasize the action and artwork.
-3. Changed dashboard wording to concise operational actions.
-4. Grouped inputs into Pool, Current/Requested Change, and Target sections.
-5. Converted pool/readout data into compact metric cards.
-6. Strengthened result hierarchy with a primary result and four metric cards.
-7. Added color-intensity cues to quick-reference table values.
-8. Added breadcrumb-style calculator navigation.
-9. Enlarged calculator artwork.
-10. Added calculator-specific green, blue, amber, and red background tints.
+## Dashboard
+- Six primary calculators in a fixed two-column by three-row grid.
+- Separate full-width Field Utilities launcher.
 
-Existing calculator logic, validation, alerts, and reference data are preserved.
+## Field Utilities
+- Langelier Saturation Index calculator.
+- Unit converter for volume, mass, flow, temperature, and pressure.
+- Dilution calculator using M1V1 = M2V2.
+
+## Appearance
+- Light
+- Dark
+- Auto, following the device appearance.
+- Selection persists locally.
+
+## Deployment
+Upload every file in this directory to the same GitHub Pages repository folder.

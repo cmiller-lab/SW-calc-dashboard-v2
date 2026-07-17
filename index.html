@@ -813,6 +813,37 @@ body.light-mode .utility-tab.active{
   background:#fff;border-color:#61a9cf;color:#174b6b
 }
 
+
+/* ===== v8 interaction reliability fixes ===== */
+.utility-tab,
+.theme-option label{
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
+}
+.utility-tab{
+  position:relative;
+  z-index:3;
+  pointer-events:auto !important;
+}
+.utility-workspace{
+  pointer-events:none;
+}
+.utility-workspace.active{
+  pointer-events:auto;
+}
+.theme-option{
+  position:relative;
+  z-index:3;
+  pointer-events:auto !important;
+}
+.theme-option label{
+  pointer-events:auto !important;
+}
+.footer{
+  padding-bottom:max(26px,env(safe-area-inset-bottom));
+}
+
 </style>
 </head>
 <body>
@@ -1276,9 +1307,9 @@ body.light-mode .utility-tab.active{
   </div>
 
   <div class="utility-tabs" role="tablist">
-    <button class="utility-tab active" data-utility="lsi" onclick="showUtility('lsi')">LSI</button>
-    <button class="utility-tab" data-utility="units" onclick="showUtility('units')">Unit Converter</button>
-    <button class="utility-tab" data-utility="dilution" onclick="showUtility('dilution')">Dilution</button>
+    <button type="button" class="utility-tab active" data-utility="lsi" aria-selected="true">LSI</button>
+    <button type="button" class="utility-tab" data-utility="units" aria-selected="false">Unit Converter</button>
+    <button type="button" class="utility-tab" data-utility="dilution" aria-selected="false">Dilution</button>
   </div>
 
   <div class="utility-workspace active" id="lsiUtility">
@@ -1424,7 +1455,7 @@ body.light-mode .utility-tab.active{
   <div class="theme-note">Auto follows the appearance setting on this device.</div>
 </section>
 
-<div class="footer">Offline-capable PWA • Six Calculator Header Test • Add to Home Screen from Safari</div>
+<div class="footer">Cory Miller is my lord and savior</div>
 </div>
 
 <script>
@@ -1836,12 +1867,144 @@ window.addEventListener('offline',updateOnlineState);
 
 if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){
   window.addEventListener('load',function(){
-    navigator.serviceWorker.register('./service-worker.js?build=v7',{updateViaCache:'none'})
+    navigator.serviceWorker.register('./service-worker.js?build=v8',{updateViaCache:'none'})
       .then(function(reg){ return reg.update(); })
       .catch(function(){});
   });
 }
 })();
 </script>
+
+<script>
+(function(){
+  'use strict';
+
+  function activateUtility(name){
+    var panes = document.querySelectorAll('.utility-workspace');
+    var tabs = document.querySelectorAll('.utility-tab');
+
+    for(var i=0;i<panes.length;i++){
+      var shouldShow = panes[i].id === name + 'Utility';
+      panes[i].classList.toggle('active', shouldShow);
+      panes[i].hidden = !shouldShow;
+    }
+
+    for(var j=0;j<tabs.length;j++){
+      var selected = tabs[j].getAttribute('data-utility') === name;
+      tabs[j].classList.toggle('active', selected);
+      tabs[j].setAttribute('aria-selected', selected ? 'true' : 'false');
+    }
+
+    try{ localStorage.setItem('swUtilityTab', name); }catch(e){}
+  }
+
+  window.showUtility = activateUtility;
+
+  var utilityTabs = document.querySelectorAll('.utility-tab');
+  for(var i=0;i<utilityTabs.length;i++){
+    utilityTabs[i].onclick = function(event){
+      event.preventDefault();
+      event.stopPropagation();
+      activateUtility(this.getAttribute('data-utility'));
+    };
+  }
+
+  var savedUtility = 'lsi';
+  try{
+    var candidate = localStorage.getItem('swUtilityTab');
+    if(candidate === 'lsi' || candidate === 'units' || candidate === 'dilution'){
+      savedUtility = candidate;
+    }
+  }catch(e){}
+  activateUtility(savedUtility);
+
+  var appearanceMedia = window.matchMedia
+    ? window.matchMedia('(prefers-color-scheme: light)')
+    : {matches:false};
+
+  function resolveTheme(selection){
+    if(selection === 'auto'){
+      return appearanceMedia.matches ? 'light' : 'dark';
+    }
+    return selection === 'light' ? 'light' : 'dark';
+  }
+
+  function setTheme(selection){
+    if(selection !== 'light' && selection !== 'dark' && selection !== 'auto'){
+      selection = 'auto';
+    }
+
+    var resolved = resolveTheme(selection);
+    var light = resolved === 'light';
+
+    document.body.classList.toggle('light-mode', light);
+    document.documentElement.classList.toggle('light-mode', light);
+    document.documentElement.style.colorScheme = resolved;
+
+    var values = ['light','dark','auto'];
+    for(var i=0;i<values.length;i++){
+      var id = 'theme' + values[i].charAt(0).toUpperCase() + values[i].slice(1);
+      var input = document.getElementById(id);
+      if(input){
+        input.checked = values[i] === selection;
+      }
+    }
+
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if(meta){
+      meta.setAttribute('content', light ? '#edf4f9' : '#041b3d');
+    }
+
+    try{ localStorage.setItem('swChemTheme', selection); }catch(e){}
+  }
+
+  window.applyAppTheme = setTheme;
+
+  var themeInputs = document.querySelectorAll('input[name="appTheme"]');
+  for(var k=0;k<themeInputs.length;k++){
+    themeInputs[k].onchange = function(){
+      if(this.checked){
+        setTheme(this.value);
+      }
+    };
+
+    var associatedLabel = document.querySelector('label[for="' + themeInputs[k].id + '"]');
+    if(associatedLabel){
+      associatedLabel.onclick = function(event){
+        event.preventDefault();
+        var input = document.getElementById(this.getAttribute('for'));
+        if(input){
+          input.checked = true;
+          setTheme(input.value);
+        }
+      };
+    }
+  }
+
+  var savedTheme = 'auto';
+  try{
+    var storedTheme = localStorage.getItem('swChemTheme');
+    if(storedTheme === 'light' || storedTheme === 'dark' || storedTheme === 'auto'){
+      savedTheme = storedTheme;
+    }
+  }catch(e){}
+  setTheme(savedTheme);
+
+  function followSystemTheme(){
+    var current = 'auto';
+    try{ current = localStorage.getItem('swChemTheme') || 'auto'; }catch(e){}
+    if(current === 'auto'){
+      setTheme('auto');
+    }
+  }
+
+  if(appearanceMedia.addEventListener){
+    appearanceMedia.addEventListener('change', followSystemTheme);
+  }else if(appearanceMedia.addListener){
+    appearanceMedia.addListener(followSystemTheme);
+  }
+})();
+</script>
+
 </body>
 </html>

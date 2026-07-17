@@ -1,19 +1,10 @@
-# SeaWorld Water Chemistry Console v7
+# SeaWorld Water Chemistry Console v8
 
-## Dashboard
-- Six primary calculators in a fixed two-column by three-row grid.
-- Separate full-width Field Utilities launcher.
+Fixes:
+- Unit Converter and Dilution utility tabs now use independent, touch-safe controls.
+- Light, Dark, and Auto modes now use a final defensive initialization layer.
+- Auto mode supports both modern and legacy Safari media-query listeners.
+- PWA cache version updated to v8 to remove stale scripts.
+- Footer text updated.
 
-## Field Utilities
-- Langelier Saturation Index calculator.
-- Unit converter for volume, mass, flow, temperature, and pressure.
-- Dilution calculator using M1V1 = M2V2.
-
-## Appearance
-- Light
-- Dark
-- Auto, following the device appearance.
-- Selection persists locally.
-
-## Deployment
-Upload every file in this directory to the same GitHub Pages repository folder.
+Upload every file in this folder to the same GitHub Pages repository directory.

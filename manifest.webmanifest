@@ -4,7 +4,7 @@
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#04101e",
+  "background_color": "#020b16",
   "theme_color": "#041b3d",
   "description": "Pool chemical dosing calculators and field utilities.",
   "icons": [

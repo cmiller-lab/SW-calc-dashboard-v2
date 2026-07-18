@@ -1,15 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b4f8a">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="SeaWorld Dose">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icon-192.png">
-<link rel="icon" href="icon-192.png">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#0b4f8a" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="SeaWorld Dose" name="apple-mobile-web-app-title"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<link href="icon-192.png" rel="apple-touch-icon"/>
+<link href="icon-192.png" rel="icon"/>
 <title>SeaWorld Water Chemistry Console</title>
 <style>
 :root{--navy:#17365d;--blue:#d9eaf7;--green:#e2f0d9;--red:#fce4d6;--ink:#1f2937;--muted:#667085;--border:#cfd8e3;--white:#fff;--light:#f7fafc;--error:#b42318;--errorbg:#fef3f2}
@@ -886,133 +887,125 @@ body.light-mode .alkalinity-tile::before{
   opacity:.10 !important;
 }
 
+
+/* v10 dark-only build */
+html{color-scheme:dark}
+body{background:#020b16!important;color:#eef6ff!important}
+.footer{padding-bottom:max(28px,env(safe-area-inset-bottom))}
+.utility-workspace[hidden]{display:none!important}
+
 </style>
 </head>
 <body>
 <div class="wrap">
-
-
 <section class="hero header-clean">
-<svg class="hero-wave" viewBox="0 0 700 330" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="h2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#36c6ff" stop-opacity=".12"/><stop offset=".5" stop-color="#0d83d9" stop-opacity=".58"/><stop offset="1" stop-color="#002b68" stop-opacity=".86"/></linearGradient></defs><path d="M0 210C110 150 180 225 280 162c90-58 170-82 270-28 52 28 99 28 150 5v191H0z" fill="url(#h2)"/><path d="M15 198c85-38 130-2 185 7 76 13 119-74 203-72 84 2 126 61 202 52 35-4 66-15 95-34" fill="none" stroke="#baf1ff" stroke-width="6" opacity=".58"/></svg>
+<svg aria-hidden="true" class="hero-wave" preserveaspectratio="none" viewbox="0 0 700 330"><defs><lineargradient id="h2" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#36c6ff" stop-opacity=".12"></stop><stop offset=".5" stop-color="#0d83d9" stop-opacity=".58"></stop><stop offset="1" stop-color="#002b68" stop-opacity=".86"></stop></lineargradient></defs><path d="M0 210C110 150 180 225 280 162c90-58 170-82 270-28 52 28 99 28 150 5v191H0z" fill="url(#h2)"></path><path d="M15 198c85-38 130-2 185 7 76 13 119-74 203-72 84 2 126 61 202 52 35-4 66-15 95-34" fill="none" opacity=".58" stroke="#baf1ff" stroke-width="6"></path></svg>
 <div class="clean-header-layout"><div class="clean-brand"><div class="eyebrow">AQUATIC OPERATIONS</div><h1>SeaWorld</h1><div class="product-title">Water Chemistry Console</div><p>Chemical dosing tools and pool-specific operational references.</p></div><aside class="clean-status"><div class="status-head">SYSTEM</div><div class="online-row"><span class="online-dot"></span><strong id="onlineStatus">System Online</strong></div><div class="status-row2"><span>Date</span><strong id="headerDate">—</strong></div><div class="status-row2"><span>Time</span><strong id="headerTime">—</strong></div><div class="status-row2"><span>Calculators</span><strong>6 Active</strong></div></aside></div></section>
-
-
-
 <div class="tabs">
 <button class="tab active" id="tabSoda" onclick="showTab('soda')">Soda Ash</button>
 <button class="tab" id="tabFC" onclick="showTab('fc')">Chlorine Feed</button>
 <button class="tab" id="tabCYA" onclick="showTab('cya')">CYA Dosing</button>
 </div>
-
-
-
 <section class="ops-dashboard" id="opsDashboard">
-  <div class="dashboard-simple primary-calculator-grid">
-    <button class="launch-tile" onclick="showTab('soda')" aria-label="Open Soda Ash calculator">
-      <div class="launch-art">
-<svg viewBox="0 0 160 160" aria-hidden="true">
- <defs>
-  <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4fff6"/><stop offset="1" stop-color="#9fe7aa"/></linearGradient>
-  <filter id="sd"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-opacity=".4"/></filter>
- </defs>
- <circle cx="80" cy="80" r="67" fill="#0b5327" stroke="#59e477" stroke-width="3"/>
- <g filter="url(#sd)">
-  <path d="M48 47h55l-4 14H52z" fill="#e9fff0"/>
-  <rect x="51" y="59" width="50" height="56" rx="8" fill="url(#sg)" stroke="#d9ffe2" stroke-width="2"/>
-  <path d="M94 98c20 2 35 10 42 28H55c8-19 21-28 39-28z" fill="#f5fff7"/>
-  <circle cx="76" cy="83" r="12" fill="#2faf52"/>
-  <path d="M76 72l7 9-7 9-7-9z" fill="#e8ffed"/>
- </g>
+<div class="dashboard-simple primary-calculator-grid">
+<button aria-label="Open Soda Ash calculator" class="launch-tile" onclick="showTab('soda')">
+<div class="launch-art">
+<svg aria-hidden="true" viewbox="0 0 160 160">
+<defs>
+<lineargradient id="sg" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f4fff6"></stop><stop offset="1" stop-color="#9fe7aa"></stop></lineargradient>
+<filter id="sd"><fedropshadow dx="0" dy="6" flood-opacity=".4" stddeviation="6"></fedropshadow></filter>
+</defs>
+<circle cx="80" cy="80" fill="#0b5327" r="67" stroke="#59e477" stroke-width="3"></circle>
+<g filter="url(#sd)">
+<path d="M48 47h55l-4 14H52z" fill="#e9fff0"></path>
+<rect fill="url(#sg)" height="56" rx="8" stroke="#d9ffe2" stroke-width="2" width="50" x="51" y="59"></rect>
+<path d="M94 98c20 2 35 10 42 28H55c8-19 21-28 39-28z" fill="#f5fff7"></path>
+<circle cx="76" cy="83" fill="#2faf52" r="12"></circle>
+<path d="M76 72l7 9-7 9-7-9z" fill="#e8ffed"></path>
+</g>
 </svg>
 </div>
-      <div class="launch-title">Dose Soda Ash</div><div class="launch-action">Raise pH</div><div class="launch-desc">Target pH 7.6</div>
-    </button><button class="launch-tile" onclick="showTab('fc')" aria-label="Open Chlorine Feed calculator">
-      <div class="launch-art">
-<svg viewBox="0 0 160 160" aria-hidden="true">
- <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bff4ff"/><stop offset=".55" stop-color="#21b9ff"/><stop offset="1" stop-color="#0766d9"/></linearGradient>
- <filter id="cd"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-opacity=".45"/></filter></defs>
- <circle cx="80" cy="80" r="67" fill="#063865" stroke="#20afff" stroke-width="3"/>
- <path filter="url(#cd)" d="M80 31c-17 27-35 46-35 69 0 20 16 35 35 35s35-15 35-35c0-23-18-42-35-69z" fill="url(#cg)" stroke="#caf5ff" stroke-width="2"/>
- <path d="M67 102c2 10 10 16 20 17-15 6-30-4-31-19-1-12 7-24 17-38-6 19-9 30-6 40z" fill="#e8fbff" opacity=".72"/>
+<div class="launch-title">Dose Soda Ash</div><div class="launch-action">Raise pH</div><div class="launch-desc">Target pH 7.6</div>
+</button><button aria-label="Open Chlorine Feed calculator" class="launch-tile" onclick="showTab('fc')">
+<div class="launch-art">
+<svg aria-hidden="true" viewbox="0 0 160 160">
+<defs><lineargradient id="cg" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#bff4ff"></stop><stop offset=".55" stop-color="#21b9ff"></stop><stop offset="1" stop-color="#0766d9"></stop></lineargradient>
+<filter id="cd"><fedropshadow dx="0" dy="7" flood-opacity=".45" stddeviation="6"></fedropshadow></filter></defs>
+<circle cx="80" cy="80" fill="#063865" r="67" stroke="#20afff" stroke-width="3"></circle>
+<path d="M80 31c-17 27-35 46-35 69 0 20 16 35 35 35s35-15 35-35c0-23-18-42-35-69z" fill="url(#cg)" filter="url(#cd)" stroke="#caf5ff" stroke-width="2"></path>
+<path d="M67 102c2 10 10 16 20 17-15 6-30-4-31-19-1-12 7-24 17-38-6 19-9 30-6 40z" fill="#e8fbff" opacity=".72"></path>
 </svg>
 </div>
-      <div class="launch-title">Increase Chlorine</div><div class="launch-action">Manual Feed</div><div class="launch-desc">Calculated runtime</div>
-    </button><button class="launch-tile" onclick="showTab('cya')" aria-label="Open CYA Dosing calculator">
-      <div class="launch-art">
-<svg viewBox="0 0 160 160" aria-hidden="true">
- <defs><linearGradient id="yg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff6c7"/><stop offset=".45" stop-color="#fdbb24"/><stop offset="1" stop-color="#a85b00"/></linearGradient>
- <filter id="yd"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-opacity=".45"/></filter></defs>
- <circle cx="80" cy="80" r="67" fill="#65400a" stroke="#f2a900" stroke-width="3"/>
- <path filter="url(#yd)" d="M80 34l39 14v30c0 27-17 42-39 51-22-9-39-24-39-51V48z" fill="url(#yg)" stroke="#fff3bb" stroke-width="3"/>
- <path d="M59 79l13 14 29-31" fill="none" stroke="#6d4500" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<div class="launch-title">Increase Chlorine</div><div class="launch-action">Manual Feed</div><div class="launch-desc">Calculated runtime</div>
+</button><button aria-label="Open CYA Dosing calculator" class="launch-tile" onclick="showTab('cya')">
+<div class="launch-art">
+<svg aria-hidden="true" viewbox="0 0 160 160">
+<defs><lineargradient id="yg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fff6c7"></stop><stop offset=".45" stop-color="#fdbb24"></stop><stop offset="1" stop-color="#a85b00"></stop></lineargradient>
+<filter id="yd"><fedropshadow dx="0" dy="7" flood-opacity=".45" stddeviation="6"></fedropshadow></filter></defs>
+<circle cx="80" cy="80" fill="#65400a" r="67" stroke="#f2a900" stroke-width="3"></circle>
+<path d="M80 34l39 14v30c0 27-17 42-39 51-22-9-39-24-39-51V48z" fill="url(#yg)" filter="url(#yd)" stroke="#fff3bb" stroke-width="3"></path>
+<path d="M59 79l13 14 29-31" fill="none" stroke="#6d4500" stroke-linecap="round" stroke-linejoin="round" stroke-width="11"></path>
 </svg>
 </div>
-      <div class="launch-title">Dose Stabilizer</div><div class="launch-action">Increase CYA</div><div class="launch-desc">Target 14 ppm</div>
-    </button><button class="launch-tile" onclick="showTab('dechlor')" aria-label="Open Dechlorination calculator">
-      <div class="launch-art">
-<svg viewBox="0 0 160 160" aria-hidden="true">
- <defs><linearGradient id="dg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff8a8f"/><stop offset=".45" stop-color="#ff3c49"/><stop offset="1" stop-color="#b80022"/></linearGradient>
- <filter id="dd"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-opacity=".45"/></filter></defs>
- <circle cx="80" cy="80" r="67" fill="#5c1420" stroke="#ff3c49" stroke-width="3"/>
- <path filter="url(#dd)" d="M64 33h32v55h24l-40 43-40-43h24z" fill="url(#dg)" stroke="#ffc6c9" stroke-width="2" stroke-linejoin="round"/>
+<div class="launch-title">Dose Stabilizer</div><div class="launch-action">Increase CYA</div><div class="launch-desc">Target 14 ppm</div>
+</button><button aria-label="Open Dechlorination calculator" class="launch-tile" onclick="showTab('dechlor')">
+<div class="launch-art">
+<svg aria-hidden="true" viewbox="0 0 160 160">
+<defs><lineargradient id="dg" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#ff8a8f"></stop><stop offset=".45" stop-color="#ff3c49"></stop><stop offset="1" stop-color="#b80022"></stop></lineargradient>
+<filter id="dd"><fedropshadow dx="0" dy="7" flood-opacity=".45" stddeviation="6"></fedropshadow></filter></defs>
+<circle cx="80" cy="80" fill="#5c1420" r="67" stroke="#ff3c49" stroke-width="3"></circle>
+<path d="M64 33h32v55h24l-40 43-40-43h24z" fill="url(#dg)" filter="url(#dd)" stroke="#ffc6c9" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </div>
-      <div class="launch-title">Neutralize Chlorine</div><div class="launch-action">Lower FC</div><div class="launch-desc">Sodium thiosulfate</div>
-    </button><button class="launch-tile tile-cal" onclick="showTab('calhypo')"><div class="launch-art"><div class="simple-icon">🪣</div></div><div class="launch-title">Manual Chlorination</div><div class="launch-action">Granular Cal Hypo</div><div class="launch-desc">Pulsar® products</div></button><button class="launch-tile tile-alk" onclick="showTab('alk')"><div class="launch-art"><div class="simple-icon">⚖️</div></div><div class="launch-title">Alkalinity</div><div class="launch-action">Sodium Bicarbonate</div><div class="launch-desc">Raise total alkalinity</div></button>
-  </div>
-  
-<button class="utilities-launcher" onclick="showTab('utilities')" aria-label="Open utility calculators">
-  <div class="utilities-launcher-icon">⌁</div>
-  <div class="utilities-launcher-copy">
-    <span class="utilities-kicker">FIELD UTILITIES</span>
-    <strong>LSI, Unit Conversion & Dilution</strong>
-    <small>Three supporting tools in one workspace</small>
-  </div>
-  <span class="utilities-arrow">›</span>
+<div class="launch-title">Neutralize Chlorine</div><div class="launch-action">Lower FC</div><div class="launch-desc">Sodium thiosulfate</div>
+</button><button class="launch-tile tile-cal" onclick="showTab('calhypo')"><div class="launch-art"><div class="simple-icon">🪣</div></div><div class="launch-title">Manual Chlorination</div><div class="launch-action">Granular Cal Hypo</div><div class="launch-desc">Pulsar® products</div></button><button class="launch-tile tile-alk" onclick="showTab('alk')"><div class="launch-art"><div class="simple-icon">⚖️</div></div><div class="launch-title">Alkalinity</div><div class="launch-action">Sodium Bicarbonate</div><div class="launch-desc">Raise total alkalinity</div></button>
+</div>
+<button aria-label="Open utility calculators" class="utilities-launcher" onclick="showTab('utilities')">
+<div class="utilities-launcher-icon">⌁</div>
+<div class="utilities-launcher-copy">
+<span class="utilities-kicker">FIELD UTILITIES</span>
+<strong>LSI, Unit Conversion &amp; Dilution</strong>
+<small>Three supporting tools in one workspace</small>
+</div>
+<span class="utilities-arrow">›</span>
 </button>
-
 </section>
-
-
-
-
-
 <section class="panel calculator-shell" id="sodaPanel">
 <div class="calculator-breadcrumb">
-  <button class="back-button" onclick="showTab('home')">← Dashboard</button>
-  <span class="breadcrumb-separator">/</span>
-  <strong>Soda Ash</strong>
+<button class="back-button" onclick="showTab('home')">← Dashboard</button>
+<span class="breadcrumb-separator">/</span>
+<strong>Soda Ash</strong>
 </div>
 <div class="calc-visual soda">
-  <div class="calc-visual-copy">
-    <span class="calc-kicker">SODA ASH</span>
-    <h2>Raise pH</h2>
-    <p>Staged sodium carbonate dosing • Target pH 7.6</p>
-  </div>
-  <div class="calc-visual-icon"><svg viewBox="0 0 160 160" aria-hidden="true">
- <defs>
-  <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4fff6"/><stop offset="1" stop-color="#9fe7aa"/></linearGradient>
-  <filter id="sd"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-opacity=".4"/></filter>
- </defs>
- <circle cx="80" cy="80" r="67" fill="#0b5327" stroke="#59e477" stroke-width="3"/>
- <g filter="url(#sd)">
-  <path d="M48 47h55l-4 14H52z" fill="#e9fff0"/>
-  <rect x="51" y="59" width="50" height="56" rx="8" fill="url(#sg)" stroke="#d9ffe2" stroke-width="2"/>
-  <path d="M94 98c20 2 35 10 42 28H55c8-19 21-28 39-28z" fill="#f5fff7"/>
-  <circle cx="76" cy="83" r="12" fill="#2faf52"/>
-  <path d="M76 72l7 9-7 9-7-9z" fill="#e8ffed"/>
- </g>
+<div class="calc-visual-copy">
+<span class="calc-kicker">SODA ASH</span>
+<h2>Raise pH</h2>
+<p>Staged sodium carbonate dosing • Target pH 7.6</p>
+</div>
+<div class="calc-visual-icon"><svg aria-hidden="true" viewbox="0 0 160 160">
+<defs>
+<lineargradient id="sg" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f4fff6"></stop><stop offset="1" stop-color="#9fe7aa"></stop></lineargradient>
+<filter id="sd"><fedropshadow dx="0" dy="6" flood-opacity=".4" stddeviation="6"></fedropshadow></filter>
+</defs>
+<circle cx="80" cy="80" fill="#0b5327" r="67" stroke="#59e477" stroke-width="3"></circle>
+<g filter="url(#sd)">
+<path d="M48 47h55l-4 14H52z" fill="#e9fff0"></path>
+<rect fill="url(#sg)" height="56" rx="8" stroke="#d9ffe2" stroke-width="2" width="50" x="51" y="59"></rect>
+<path d="M94 98c20 2 35 10 42 28H55c8-19 21-28 39-28z" fill="#f5fff7"></path>
+<circle cx="76" cy="83" fill="#2faf52" r="12"></circle>
+<path d="M76 72l7 9-7 9-7-9z" fill="#e8ffed"></path>
+</g>
 </svg></div>
 </div>
 <div class="grid">
 <div class="card">
 <h2>Soda Ash Inputs</h2>
 <div class="card-body">
-<div class="field"><label for="sodaPool">Body of Water</label><select id="sodaPool"><option value="0" selected>501 — Cutback Cove</option>
+<div class="field"><label for="sodaPool">Body of Water</label><select id="sodaPool"><option selected="" value="0">501 — Cutback Cove</option>
 <option value="1">502 — Big Surf Shores</option>
 <option value="2">503 — Omaka Rocka</option>
 <option value="3">504 — Katas Kookaburra</option>
-<option value="4">505 — Roa&#x27;s Rapids</option>
+<option value="4">505 — Roa's Rapids</option>
 <option value="5">506 — Whanau Way</option>
 <option value="6">507 — Walkabout Waters</option>
 <option value="7">508 — Ray Rush/Whahalla Wave</option>
@@ -1034,18 +1027,17 @@ body.light-mode .alkalinity-tile::before{
 <option value="23">Freshwater Oasis</option></select></div>
 <div class="field">
 <label for="currentPH">Current pH</label>
-<input id="currentPH" type="number" min="4.0" max="7.6" step="0.1" value="6.0" inputmode="decimal">
+<input id="currentPH" inputmode="decimal" max="7.6" min="4.0" step="0.1" type="number" value="6.0"/>
 <div class="help">Supported calculation range: pH 4.0–7.6</div>
 <div class="error" id="phError">Enter a pH between 4.0 and 7.6.</div>
 </div>
-<div class="field"><label>Goal pH</label><input value="7.6" readonly></div>
+<div class="field"><label>Goal pH</label><input readonly="" value="7.6"/></div>
 <div class="readout"><span>Pool number</span><strong id="sodaId">501</strong></div>
 <div class="readout"><span>Volume</span><strong id="sodaVolume">511,740 gal</strong></div>
 <div class="readout"><span>pH increase</span><strong id="phShift">1.6 units</strong></div>
 <div class="readout"><span>Calculated rate</span><strong id="sodaRate">3.00 lb/10k gal</strong></div>
 </div>
 </div>
-
 <div class="card">
 <h2>Estimated Soda Ash Dose</h2>
 <div class="card-body">
@@ -1059,47 +1051,44 @@ body.light-mode .alkalinity-tile::before{
 </div>
 </div>
 </div>
-
 <div class="reference-section">
- <div class="reference-header"><h3>Quick Reference — Soda Ash for +0.5 pH</h3><p>Same proportional model as the calculator.</p></div>
- <div class="table-wrap"><table class="ref-table">
- <thead><tr><th>Body of Water</th><th>Dose</th></tr></thead>
- <tbody><tr><td>501 - Cutback Cove</td><td>48.0 lb</td></tr><tr><td>502 - Big Surf Shores</td><td>47.6 lb</td></tr><tr><td>503 - Omaka Rocka</td><td>2.1 lb</td></tr><tr><td>504 - Katas Kookaburra</td><td>7.4 lb</td></tr><tr><td>505 - Roa's Rapids</td><td>87.9 lb</td></tr><tr><td>506 - Whanau Way</td><td>8.9 lb</td></tr><tr><td>507 - Walkabout Waters</td><td>15.9 lb</td></tr><tr><td>508 - Ray Rush/Whahalla Wave</td><td>8.7 lb</td></tr><tr><td>509 - Loggerhead/Tassie</td><td>37.3 lb</td></tr><tr><td>510 - Dolphin Plunge</td><td>2.1 lb</td></tr><tr><td>520 - Ihu Breakaway Falls</td><td>1.5 lb</td></tr><tr><td>530 - Taumata Racer</td><td>1.2 lb</td></tr><tr><td>540 - KareKareKurl</td><td>1.4 lb</td></tr><tr><td>550 - Riptide</td><td>2.0 lb</td></tr><tr><td>Infinity Falls 1</td><td>56.2 lb</td></tr><tr><td>Infinity Falls 2</td><td>28.1 lb</td></tr><tr><td>Kraken</td><td>4.5 lb</td></tr><tr><td>Manta Pond</td><td>28.1 lb</td></tr><tr><td>Main Gate</td><td>75.0 lb</td></tr><tr><td>Journey to Atlantis</td><td>75.0 lb</td></tr><tr><td>Sesame</td><td>0.8 lb</td></tr><tr><td>Pearl</td><td>4.7 lb</td></tr><tr><td>Tropical River/Resort Pool</td><td>112.5 lb</td></tr><tr><td>Freshwater Oasis</td><td>87.4 lb</td></tr></tbody></table></div>
+<div class="reference-header"><h3>Quick Reference — Soda Ash for +0.5 pH</h3><p>Same proportional model as the calculator.</p></div>
+<div class="table-wrap"><table class="ref-table">
+<thead><tr><th>Body of Water</th><th>Dose</th></tr></thead>
+<tbody><tr><td>501 - Cutback Cove</td><td>48.0 lb</td></tr><tr><td>502 - Big Surf Shores</td><td>47.6 lb</td></tr><tr><td>503 - Omaka Rocka</td><td>2.1 lb</td></tr><tr><td>504 - Katas Kookaburra</td><td>7.4 lb</td></tr><tr><td>505 - Roa's Rapids</td><td>87.9 lb</td></tr><tr><td>506 - Whanau Way</td><td>8.9 lb</td></tr><tr><td>507 - Walkabout Waters</td><td>15.9 lb</td></tr><tr><td>508 - Ray Rush/Whahalla Wave</td><td>8.7 lb</td></tr><tr><td>509 - Loggerhead/Tassie</td><td>37.3 lb</td></tr><tr><td>510 - Dolphin Plunge</td><td>2.1 lb</td></tr><tr><td>520 - Ihu Breakaway Falls</td><td>1.5 lb</td></tr><tr><td>530 - Taumata Racer</td><td>1.2 lb</td></tr><tr><td>540 - KareKareKurl</td><td>1.4 lb</td></tr><tr><td>550 - Riptide</td><td>2.0 lb</td></tr><tr><td>Infinity Falls 1</td><td>56.2 lb</td></tr><tr><td>Infinity Falls 2</td><td>28.1 lb</td></tr><tr><td>Kraken</td><td>4.5 lb</td></tr><tr><td>Manta Pond</td><td>28.1 lb</td></tr><tr><td>Main Gate</td><td>75.0 lb</td></tr><tr><td>Journey to Atlantis</td><td>75.0 lb</td></tr><tr><td>Sesame</td><td>0.8 lb</td></tr><tr><td>Pearl</td><td>4.7 lb</td></tr><tr><td>Tropical River/Resort Pool</td><td>112.5 lb</td></tr><tr><td>Freshwater Oasis</td><td>87.4 lb</td></tr></tbody></table></div>
 </div>
-
 <div class="formula" id="sodaFormula"></div>
 <div class="note"><strong>Model limitation:</strong> Soda ash is scaled from 3.0 lb per 10,000 gallons for pH 6.0 → 7.6. Values below pH 6.0 are extrapolated from that same proportional model. Verify very low readings with a calibrated meter and use staged additions.</div>
 </section>
-
 <section class="panel calculator-shell" id="fcPanel">
 <div class="calculator-breadcrumb">
-  <button class="back-button" onclick="showTab('home')">← Dashboard</button>
-  <span class="breadcrumb-separator">/</span>
-  <strong>Chlorine Feed</strong>
+<button class="back-button" onclick="showTab('home')">← Dashboard</button>
+<span class="breadcrumb-separator">/</span>
+<strong>Chlorine Feed</strong>
 </div>
 <div class="calc-visual fc">
-  <div class="calc-visual-copy">
-    <span class="calc-kicker">CHLORINE FEED</span>
-    <h2>Increase Free Chlorine</h2>
-    <p>Manual chemical-feed duration calculator</p>
-  </div>
-  <div class="calc-visual-icon"><svg viewBox="0 0 160 160" aria-hidden="true">
- <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bff4ff"/><stop offset=".55" stop-color="#21b9ff"/><stop offset="1" stop-color="#0766d9"/></linearGradient>
- <filter id="cd"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-opacity=".45"/></filter></defs>
- <circle cx="80" cy="80" r="67" fill="#063865" stroke="#20afff" stroke-width="3"/>
- <path filter="url(#cd)" d="M80 31c-17 27-35 46-35 69 0 20 16 35 35 35s35-15 35-35c0-23-18-42-35-69z" fill="url(#cg)" stroke="#caf5ff" stroke-width="2"/>
- <path d="M67 102c2 10 10 16 20 17-15 6-30-4-31-19-1-12 7-24 17-38-6 19-9 30-6 40z" fill="#e8fbff" opacity=".72"/>
+<div class="calc-visual-copy">
+<span class="calc-kicker">CHLORINE FEED</span>
+<h2>Increase Free Chlorine</h2>
+<p>Manual chemical-feed duration calculator</p>
+</div>
+<div class="calc-visual-icon"><svg aria-hidden="true" viewbox="0 0 160 160">
+<defs><lineargradient id="cg" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#bff4ff"></stop><stop offset=".55" stop-color="#21b9ff"></stop><stop offset="1" stop-color="#0766d9"></stop></lineargradient>
+<filter id="cd"><fedropshadow dx="0" dy="7" flood-opacity=".45" stddeviation="6"></fedropshadow></filter></defs>
+<circle cx="80" cy="80" fill="#063865" r="67" stroke="#20afff" stroke-width="3"></circle>
+<path d="M80 31c-17 27-35 46-35 69 0 20 16 35 35 35s35-15 35-35c0-23-18-42-35-69z" fill="url(#cg)" filter="url(#cd)" stroke="#caf5ff" stroke-width="2"></path>
+<path d="M67 102c2 10 10 16 20 17-15 6-30-4-31-19-1-12 7-24 17-38-6 19-9 30-6 40z" fill="#e8fbff" opacity=".72"></path>
 </svg></div>
 </div>
 <div class="grid">
 <div class="card">
 <h2>Chlorine Feed Inputs</h2>
 <div class="card-body">
-<div class="field"><label for="fcPool">Body of Water</label><select id="fcPool"><option value="0" selected>501 — Cutback Cove</option>
+<div class="field"><label for="fcPool">Body of Water</label><select id="fcPool"><option selected="" value="0">501 — Cutback Cove</option>
 <option value="1">502 — Big Surf Shores</option>
 <option value="2">503 — Omaka Rocka</option>
 <option value="3">504 — Katas Kookaburra</option>
-<option value="4">505 — Roa&#x27;s Rapids</option>
+<option value="4">505 — Roa's Rapids</option>
 <option value="5">506 — Whanau Way</option>
 <option value="6">507 — Walkabout Waters</option>
 <option value="7">508 — Ray Rush/Whahalla Wave</option>
@@ -1121,7 +1110,7 @@ body.light-mode .alkalinity-tile::before{
 <option value="23">Freshwater Oasis</option></select></div>
 <div class="field">
 <label for="desiredFC">Desired FC Increase (ppm)</label>
-<input id="desiredFC" type="number" min="0.1" max="60" step="0.1" value="3.0" inputmode="decimal">
+<input id="desiredFC" inputmode="decimal" max="60" min="0.1" step="0.1" type="number" value="3.0"/>
 <div class="help">Supported calculation range: 0.1–60.0 ppm</div>
 <div class="error" id="fcError">Enter an FC increase between 0.1 and 60.0 ppm.</div>
 </div>
@@ -1131,7 +1120,6 @@ body.light-mode .alkalinity-tile::before{
 <div class="readout"><span>Feed rate basis</span><strong>5 minutes</strong></div>
 </div>
 </div>
-
 <div class="card">
 <h2>Required Manual Feed</h2>
 <div class="card-body">
@@ -1145,48 +1133,44 @@ body.light-mode .alkalinity-tile::before{
 </div>
 </div>
 </div>
-
 <div class="reference-section">
- <div class="reference-header"><h3>Quick Reference — FC Rise from 5-Minute Feed</h3><p>Expected FC increase from one 5-minute feed.</p></div>
- <div class="table-wrap"><table class="ref-table">
- <thead><tr><th>Body of Water</th><th>FC Rise</th></tr></thead>
- <tbody><tr><td>501 - Cutback Cove</td><td>0.42 ppm</td></tr><tr><td>502 - Big Surf Shores</td><td>0.42 ppm</td></tr><tr><td>503 - Omaka Rocka</td><td>0.50 ppm</td></tr><tr><td>504 - Katas Kookaburra</td><td>1.35 ppm</td></tr><tr><td>505 - Roa's Rapids</td><td>0.34 ppm</td></tr><tr><td>506 - Whanau Way</td><td>1.12 ppm</td></tr><tr><td>507 - Walkabout Waters</td><td>1.25 ppm</td></tr><tr><td>508 - Ray Rush/Whahalla Wave</td><td>0.58 ppm</td></tr><tr><td>509 - Loggerhead/Tassie</td><td>0.54 ppm</td></tr><tr><td>510 - Dolphin Plunge</td><td>0.72 ppm</td></tr><tr><td>520 - Ihu Breakaway Falls</td><td>1.00 ppm</td></tr><tr><td>530 - Taumata Racer</td><td>1.31 ppm</td></tr><tr><td>540 - KareKareKurl</td><td>3.56 ppm</td></tr><tr><td>550 - Riptide</td><td>0.77 ppm</td></tr><tr><td>Infinity Falls 1</td><td>0.18 ppm</td></tr><tr><td>Infinity Falls 2</td><td>0.36 ppm</td></tr><tr><td>Kraken</td><td>1.89 ppm</td></tr><tr><td>Manta Pond</td><td>0.30 ppm</td></tr><tr><td>Main Gate</td><td>0.34 ppm</td></tr><tr><td>Journey to Atlantis</td><td>0.27 ppm</td></tr><tr><td>Sesame</td><td>1.83 ppm</td></tr><tr><td>Pearl</td><td>0.32 ppm</td></tr><tr><td>Tropical River/Resort Pool</td><td>0.36 ppm</td></tr><tr><td>Freshwater Oasis</td><td>0.34 ppm</td></tr></tbody></table></div>
+<div class="reference-header"><h3>Quick Reference — FC Rise from 5-Minute Feed</h3><p>Expected FC increase from one 5-minute feed.</p></div>
+<div class="table-wrap"><table class="ref-table">
+<thead><tr><th>Body of Water</th><th>FC Rise</th></tr></thead>
+<tbody><tr><td>501 - Cutback Cove</td><td>0.42 ppm</td></tr><tr><td>502 - Big Surf Shores</td><td>0.42 ppm</td></tr><tr><td>503 - Omaka Rocka</td><td>0.50 ppm</td></tr><tr><td>504 - Katas Kookaburra</td><td>1.35 ppm</td></tr><tr><td>505 - Roa's Rapids</td><td>0.34 ppm</td></tr><tr><td>506 - Whanau Way</td><td>1.12 ppm</td></tr><tr><td>507 - Walkabout Waters</td><td>1.25 ppm</td></tr><tr><td>508 - Ray Rush/Whahalla Wave</td><td>0.58 ppm</td></tr><tr><td>509 - Loggerhead/Tassie</td><td>0.54 ppm</td></tr><tr><td>510 - Dolphin Plunge</td><td>0.72 ppm</td></tr><tr><td>520 - Ihu Breakaway Falls</td><td>1.00 ppm</td></tr><tr><td>530 - Taumata Racer</td><td>1.31 ppm</td></tr><tr><td>540 - KareKareKurl</td><td>3.56 ppm</td></tr><tr><td>550 - Riptide</td><td>0.77 ppm</td></tr><tr><td>Infinity Falls 1</td><td>0.18 ppm</td></tr><tr><td>Infinity Falls 2</td><td>0.36 ppm</td></tr><tr><td>Kraken</td><td>1.89 ppm</td></tr><tr><td>Manta Pond</td><td>0.30 ppm</td></tr><tr><td>Main Gate</td><td>0.34 ppm</td></tr><tr><td>Journey to Atlantis</td><td>0.27 ppm</td></tr><tr><td>Sesame</td><td>1.83 ppm</td></tr><tr><td>Pearl</td><td>0.32 ppm</td></tr><tr><td>Tropical River/Resort Pool</td><td>0.36 ppm</td></tr><tr><td>Freshwater Oasis</td><td>0.34 ppm</td></tr></tbody></table></div>
 </div>
-
 <div class="formula" id="fcFormula"></div>
 <div class="note"><strong>Assumption:</strong> FC gain scales linearly with feed duration and feed rate remains constant. Actual FC rise may be reduced by chlorine demand, sunlight, mixing, or concurrent chemical feed. High-target calculations should be staged and verified.</div>
 </section>
-
-
 <section class="panel calculator-shell" id="cyaPanel">
 <div class="calculator-breadcrumb">
-  <button class="back-button" onclick="showTab('home')">← Dashboard</button>
-  <span class="breadcrumb-separator">/</span>
-  <strong>CYA Dosing</strong>
+<button class="back-button" onclick="showTab('home')">← Dashboard</button>
+<span class="breadcrumb-separator">/</span>
+<strong>CYA Dosing</strong>
 </div>
 <div class="calc-visual cya">
-  <div class="calc-visual-copy">
-    <span class="calc-kicker">CYA DOSING</span>
-    <h2>Dose Stabilizer</h2>
-    <p>Cyanuric acid dosing • Target CYA 14 ppm</p>
-  </div>
-  <div class="calc-visual-icon"><svg viewBox="0 0 160 160" aria-hidden="true">
- <defs><linearGradient id="yg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff6c7"/><stop offset=".45" stop-color="#fdbb24"/><stop offset="1" stop-color="#a85b00"/></linearGradient>
- <filter id="yd"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-opacity=".45"/></filter></defs>
- <circle cx="80" cy="80" r="67" fill="#65400a" stroke="#f2a900" stroke-width="3"/>
- <path filter="url(#yd)" d="M80 34l39 14v30c0 27-17 42-39 51-22-9-39-24-39-51V48z" fill="url(#yg)" stroke="#fff3bb" stroke-width="3"/>
- <path d="M59 79l13 14 29-31" fill="none" stroke="#6d4500" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<div class="calc-visual-copy">
+<span class="calc-kicker">CYA DOSING</span>
+<h2>Dose Stabilizer</h2>
+<p>Cyanuric acid dosing • Target CYA 14 ppm</p>
+</div>
+<div class="calc-visual-icon"><svg aria-hidden="true" viewbox="0 0 160 160">
+<defs><lineargradient id="yg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fff6c7"></stop><stop offset=".45" stop-color="#fdbb24"></stop><stop offset="1" stop-color="#a85b00"></stop></lineargradient>
+<filter id="yd"><fedropshadow dx="0" dy="7" flood-opacity=".45" stddeviation="6"></fedropshadow></filter></defs>
+<circle cx="80" cy="80" fill="#65400a" r="67" stroke="#f2a900" stroke-width="3"></circle>
+<path d="M80 34l39 14v30c0 27-17 42-39 51-22-9-39-24-39-51V48z" fill="url(#yg)" filter="url(#yd)" stroke="#fff3bb" stroke-width="3"></path>
+<path d="M59 79l13 14 29-31" fill="none" stroke="#6d4500" stroke-linecap="round" stroke-linejoin="round" stroke-width="11"></path>
 </svg></div>
 </div>
 <div class="grid">
 <div class="card">
 <h2>CYA Dosing Inputs</h2>
 <div class="card-body">
-<div class="field"><label for="cyaPool">Body of Water</label><select id="cyaPool" onchange="updateCYA()" oninput="updateCYA()"><option value="0" selected>501 — Cutback Cove</option>
+<div class="field"><label for="cyaPool">Body of Water</label><select id="cyaPool" onchange="updateCYA()" oninput="updateCYA()"><option selected="" value="0">501 — Cutback Cove</option>
 <option value="1">502 — Big Surf Shores</option>
 <option value="2">503 — Omaka Rocka</option>
 <option value="3">504 — Katas Kookaburra</option>
-<option value="4">505 — Roa&#x27;s Rapids</option>
+<option value="4">505 — Roa's Rapids</option>
 <option value="5">506 — Whanau Way</option>
 <option value="6">507 — Walkabout Waters</option>
 <option value="7">508 — Ray Rush/Whahalla Wave</option>
@@ -1208,18 +1192,17 @@ body.light-mode .alkalinity-tile::before{
 <option value="23">Freshwater Oasis</option></select></div>
 <div class="field">
 <label for="currentCYA">Current CYA (ppm)</label>
-<input id="currentCYA" type="number" oninput="updateCYA()" onchange="updateCYA()" min="0" max="200" step="0.1" value="7.0" inputmode="decimal">
+<input id="currentCYA" inputmode="decimal" max="200" min="0" onchange="updateCYA()" oninput="updateCYA()" step="0.1" type="number" value="7.0"/>
 <div class="help">Supported calculation range: 0–200 ppm</div>
 <div class="error" id="cyaError">Enter a CYA value between 0 and 200 ppm.</div>
 </div>
-<div class="field"><label>Goal CYA</label><input value="14 ppm" readonly></div>
+<div class="field"><label>Goal CYA</label><input readonly="" value="14 ppm"/></div>
 <div class="readout"><span>Pool number</span><strong id="cyaId">501</strong></div>
 <div class="readout"><span>Volume</span><strong id="cyaVolume">511,740 gal</strong></div>
 <div class="readout"><span>CYA increase needed</span><strong id="cyaIncrease">7.0 ppm</strong></div>
 <div class="readout"><span>Product per 1 ppm</span><strong id="cyaPerPpm">4.26 lb</strong></div>
 </div>
 </div>
-
 <div class="card">
 <h2>Estimated CYA Dose</h2>
 <div class="card-body">
@@ -1240,47 +1223,43 @@ body.light-mode .alkalinity-tile::before{
 </div>
 </div>
 </div>
-
 <div class="reference-section">
- <div class="reference-header"><h3>Quick Reference — CYA for +1 ppm</h3><p>Pure cyanuric acid required for a 1 ppm increase.</p></div>
- <div class="table-wrap"><table class="ref-table">
- <thead><tr><th>Body of Water</th><th>Dose</th></tr></thead>
- <tbody><tr><td>501 - Cutback Cove</td><td>4.26 lb</td></tr><tr><td>502 - Big Surf Shores</td><td>4.23 lb</td></tr><tr><td>503 - Omaka Rocka</td><td>0.19 lb</td></tr><tr><td>504 - Katas Kookaburra</td><td>0.66 lb</td></tr><tr><td>505 - Roa's Rapids</td><td>7.81 lb</td></tr><tr><td>506 - Whanau Way</td><td>0.79 lb</td></tr><tr><td>507 - Walkabout Waters</td><td>1.42 lb</td></tr><tr><td>508 - Ray Rush/Whahalla Wave</td><td>0.77 lb</td></tr><tr><td>509 - Loggerhead/Tassie</td><td>3.31 lb</td></tr><tr><td>510 - Dolphin Plunge</td><td>0.19 lb</td></tr><tr><td>520 - Ihu Breakaway Falls</td><td>0.13 lb</td></tr><tr><td>530 - Taumata Racer</td><td>0.10 lb</td></tr><tr><td>540 - KareKareKurl</td><td>0.12 lb</td></tr><tr><td>550 - Riptide</td><td>0.17 lb</td></tr><tr><td>Infinity Falls 1</td><td>5.00 lb</td></tr><tr><td>Infinity Falls 2</td><td>2.50 lb</td></tr><tr><td>Kraken</td><td>0.40 lb</td></tr><tr><td>Manta Pond</td><td>2.50 lb</td></tr><tr><td>Main Gate</td><td>6.67 lb</td></tr><tr><td>Journey to Atlantis</td><td>6.67 lb</td></tr><tr><td>Sesame</td><td>0.07 lb</td></tr><tr><td>Pearl</td><td>0.42 lb</td></tr><tr><td>Tropical River/Resort Pool</td><td>10.00 lb</td></tr><tr><td>Freshwater Oasis</td><td>7.77 lb</td></tr></tbody></table></div>
+<div class="reference-header"><h3>Quick Reference — CYA for +1 ppm</h3><p>Pure cyanuric acid required for a 1 ppm increase.</p></div>
+<div class="table-wrap"><table class="ref-table">
+<thead><tr><th>Body of Water</th><th>Dose</th></tr></thead>
+<tbody><tr><td>501 - Cutback Cove</td><td>4.26 lb</td></tr><tr><td>502 - Big Surf Shores</td><td>4.23 lb</td></tr><tr><td>503 - Omaka Rocka</td><td>0.19 lb</td></tr><tr><td>504 - Katas Kookaburra</td><td>0.66 lb</td></tr><tr><td>505 - Roa's Rapids</td><td>7.81 lb</td></tr><tr><td>506 - Whanau Way</td><td>0.79 lb</td></tr><tr><td>507 - Walkabout Waters</td><td>1.42 lb</td></tr><tr><td>508 - Ray Rush/Whahalla Wave</td><td>0.77 lb</td></tr><tr><td>509 - Loggerhead/Tassie</td><td>3.31 lb</td></tr><tr><td>510 - Dolphin Plunge</td><td>0.19 lb</td></tr><tr><td>520 - Ihu Breakaway Falls</td><td>0.13 lb</td></tr><tr><td>530 - Taumata Racer</td><td>0.10 lb</td></tr><tr><td>540 - KareKareKurl</td><td>0.12 lb</td></tr><tr><td>550 - Riptide</td><td>0.17 lb</td></tr><tr><td>Infinity Falls 1</td><td>5.00 lb</td></tr><tr><td>Infinity Falls 2</td><td>2.50 lb</td></tr><tr><td>Kraken</td><td>0.40 lb</td></tr><tr><td>Manta Pond</td><td>2.50 lb</td></tr><tr><td>Main Gate</td><td>6.67 lb</td></tr><tr><td>Journey to Atlantis</td><td>6.67 lb</td></tr><tr><td>Sesame</td><td>0.07 lb</td></tr><tr><td>Pearl</td><td>0.42 lb</td></tr><tr><td>Tropical River/Resort Pool</td><td>10.00 lb</td></tr><tr><td>Freshwater Oasis</td><td>7.77 lb</td></tr></tbody></table></div>
 </div>
-
 <div class="formula" id="cyaFormula"></div>
 <div class="note"><strong>Dosing basis:</strong> Pure cyanuric acid is calculated at approximately 0.0833 lb per 10,000 gallons for each 1 ppm increase. Product purity and application method may require adjustment.</div>
 </section>
-
-
 <section class="panel calculator-shell" id="dechlorPanel">
 <div class="calculator-breadcrumb">
-  <button class="back-button" onclick="showTab('home')">← Dashboard</button>
-  <span class="breadcrumb-separator">/</span>
-  <strong>Dechlorination</strong>
+<button class="back-button" onclick="showTab('home')">← Dashboard</button>
+<span class="breadcrumb-separator">/</span>
+<strong>Dechlorination</strong>
 </div>
 <div class="calc-visual dechlor">
-  <div class="calc-visual-copy">
-    <span class="calc-kicker">DECHLORINATION</span>
-    <h2>Neutralize Chlorine</h2>
-    <p>Sodium thiosulfate pentahydrate dosing</p>
-  </div>
-  <div class="calc-visual-icon"><svg viewBox="0 0 160 160" aria-hidden="true">
- <defs><linearGradient id="dg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff8a8f"/><stop offset=".45" stop-color="#ff3c49"/><stop offset="1" stop-color="#b80022"/></linearGradient>
- <filter id="dd"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-opacity=".45"/></filter></defs>
- <circle cx="80" cy="80" r="67" fill="#5c1420" stroke="#ff3c49" stroke-width="3"/>
- <path filter="url(#dd)" d="M64 33h32v55h24l-40 43-40-43h24z" fill="url(#dg)" stroke="#ffc6c9" stroke-width="2" stroke-linejoin="round"/>
+<div class="calc-visual-copy">
+<span class="calc-kicker">DECHLORINATION</span>
+<h2>Neutralize Chlorine</h2>
+<p>Sodium thiosulfate pentahydrate dosing</p>
+</div>
+<div class="calc-visual-icon"><svg aria-hidden="true" viewbox="0 0 160 160">
+<defs><lineargradient id="dg" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#ff8a8f"></stop><stop offset=".45" stop-color="#ff3c49"></stop><stop offset="1" stop-color="#b80022"></stop></lineargradient>
+<filter id="dd"><fedropshadow dx="0" dy="7" flood-opacity=".45" stddeviation="6"></fedropshadow></filter></defs>
+<circle cx="80" cy="80" fill="#5c1420" r="67" stroke="#ff3c49" stroke-width="3"></circle>
+<path d="M64 33h32v55h24l-40 43-40-43h24z" fill="url(#dg)" filter="url(#dd)" stroke="#ffc6c9" stroke-linejoin="round" stroke-width="2"></path>
 </svg></div>
 </div>
 <div class="grid">
 <div class="card">
 <h2>Dechlorination Inputs</h2>
 <div class="card-body">
-<div class="field"><label for="dechlorPool">Body of Water</label><select id="dechlorPool"><option value="0" selected>501 — Cutback Cove</option>
+<div class="field"><label for="dechlorPool">Body of Water</label><select id="dechlorPool"><option selected="" value="0">501 — Cutback Cove</option>
 <option value="1">502 — Big Surf Shores</option>
 <option value="2">503 — Omaka Rocka</option>
 <option value="3">504 — Katas Kookaburra</option>
-<option value="4">505 — Roa&#x27;s Rapids</option>
+<option value="4">505 — Roa's Rapids</option>
 <option value="5">506 — Whanau Way</option>
 <option value="6">507 — Walkabout Waters</option>
 <option value="7">508 — Ray Rush/Whahalla Wave</option>
@@ -1300,8 +1279,8 @@ body.light-mode .alkalinity-tile::before{
 <option value="21">Pearl</option>
 <option value="22">Tropical River/Resort Pool</option>
 <option value="23">Freshwater Oasis</option></select></div>
-<div class="field"><label for="dechlorCurrent">Current FC (ppm)</label><input id="dechlorCurrent" type="number" min="0" max="60" step="0.1" value="12.0" inputmode="decimal"><div class="help">Supported range: 0–60 ppm</div><div class="error" id="dechlorCurrentError"></div></div>
-<div class="field"><label for="dechlorGoal">Goal FC (ppm)</label><input id="dechlorGoal" type="number" min="0" max="60" step="0.1" value="3.0" inputmode="decimal"><div class="help">Goal cannot exceed current FC.</div><div class="error" id="dechlorGoalError"></div></div>
+<div class="field"><label for="dechlorCurrent">Current FC (ppm)</label><input id="dechlorCurrent" inputmode="decimal" max="60" min="0" step="0.1" type="number" value="12.0"/><div class="help">Supported range: 0–60 ppm</div><div class="error" id="dechlorCurrentError"></div></div>
+<div class="field"><label for="dechlorGoal">Goal FC (ppm)</label><input id="dechlorGoal" inputmode="decimal" max="60" min="0" step="0.1" type="number" value="3.0"/><div class="help">Goal cannot exceed current FC.</div><div class="error" id="dechlorGoalError"></div></div>
 <div class="readout"><span>Pool number</span><strong id="dechlorId">501</strong></div>
 <div class="readout"><span>Volume</span><strong id="dechlorVolume">511,740 gal</strong></div>
 <div class="readout"><span>FC reduction needed</span><strong id="dechlorReduction">9.0 ppm</strong></div>
@@ -1318,1043 +1297,605 @@ body.light-mode .alkalinity-tile::before{
 <div class="alert caution show" id="dechlorAlert">Large chlorine reduction: add 50% initially, circulate 15–30 minutes, and retest before additional dosing.</div>
 </div></div>
 </div>
-
 <div class="reference-section">
- <div class="reference-header"><h3>Quick Reference — Thiosulfate for −1 ppm FC</h3><p>Sodium thiosulfate pentahydrate required for a 1 ppm FC reduction.</p></div>
- <div class="table-wrap"><table class="ref-table">
- <thead><tr><th>Body of Water</th><th>Dose</th></tr></thead>
- <tbody><tr><td>501 - Cutback Cove</td><td>4.35 lb</td></tr><tr><td>502 - Big Surf Shores</td><td>4.31 lb</td></tr><tr><td>503 - Omaka Rocka</td><td>0.19 lb</td></tr><tr><td>504 - Katas Kookaburra</td><td>0.67 lb</td></tr><tr><td>505 - Roa's Rapids</td><td>7.97 lb</td></tr><tr><td>506 - Whanau Way</td><td>0.81 lb</td></tr><tr><td>507 - Walkabout Waters</td><td>1.45 lb</td></tr><tr><td>508 - Ray Rush/Whahalla Wave</td><td>0.79 lb</td></tr><tr><td>509 - Loggerhead/Tassie</td><td>3.38 lb</td></tr><tr><td>510 - Dolphin Plunge</td><td>0.19 lb</td></tr><tr><td>520 - Ihu Breakaway Falls</td><td>0.14 lb</td></tr><tr><td>530 - Taumata Racer</td><td>0.10 lb</td></tr><tr><td>540 - KareKareKurl</td><td>0.13 lb</td></tr><tr><td>550 - Riptide</td><td>0.18 lb</td></tr><tr><td>Infinity Falls 1</td><td>5.10 lb</td></tr><tr><td>Infinity Falls 2</td><td>2.55 lb</td></tr><tr><td>Kraken</td><td>0.41 lb</td></tr><tr><td>Manta Pond</td><td>2.55 lb</td></tr><tr><td>Main Gate</td><td>6.80 lb</td></tr><tr><td>Journey to Atlantis</td><td>6.80 lb</td></tr><tr><td>Sesame</td><td>0.07 lb</td></tr><tr><td>Pearl</td><td>0.43 lb</td></tr><tr><td>Tropical River/Resort Pool</td><td>10.20 lb</td></tr><tr><td>Freshwater Oasis</td><td>7.92 lb</td></tr></tbody></table></div>
+<div class="reference-header"><h3>Quick Reference — Thiosulfate for −1 ppm FC</h3><p>Sodium thiosulfate pentahydrate required for a 1 ppm FC reduction.</p></div>
+<div class="table-wrap"><table class="ref-table">
+<thead><tr><th>Body of Water</th><th>Dose</th></tr></thead>
+<tbody><tr><td>501 - Cutback Cove</td><td>4.35 lb</td></tr><tr><td>502 - Big Surf Shores</td><td>4.31 lb</td></tr><tr><td>503 - Omaka Rocka</td><td>0.19 lb</td></tr><tr><td>504 - Katas Kookaburra</td><td>0.67 lb</td></tr><tr><td>505 - Roa's Rapids</td><td>7.97 lb</td></tr><tr><td>506 - Whanau Way</td><td>0.81 lb</td></tr><tr><td>507 - Walkabout Waters</td><td>1.45 lb</td></tr><tr><td>508 - Ray Rush/Whahalla Wave</td><td>0.79 lb</td></tr><tr><td>509 - Loggerhead/Tassie</td><td>3.38 lb</td></tr><tr><td>510 - Dolphin Plunge</td><td>0.19 lb</td></tr><tr><td>520 - Ihu Breakaway Falls</td><td>0.14 lb</td></tr><tr><td>530 - Taumata Racer</td><td>0.10 lb</td></tr><tr><td>540 - KareKareKurl</td><td>0.13 lb</td></tr><tr><td>550 - Riptide</td><td>0.18 lb</td></tr><tr><td>Infinity Falls 1</td><td>5.10 lb</td></tr><tr><td>Infinity Falls 2</td><td>2.55 lb</td></tr><tr><td>Kraken</td><td>0.41 lb</td></tr><tr><td>Manta Pond</td><td>2.55 lb</td></tr><tr><td>Main Gate</td><td>6.80 lb</td></tr><tr><td>Journey to Atlantis</td><td>6.80 lb</td></tr><tr><td>Sesame</td><td>0.07 lb</td></tr><tr><td>Pearl</td><td>0.43 lb</td></tr><tr><td>Tropical River/Resort Pool</td><td>10.20 lb</td></tr><tr><td>Freshwater Oasis</td><td>7.92 lb</td></tr></tbody></table></div>
 </div>
-
 <div class="formula" id="dechlorFormula"></div>
 <div class="note"><strong>Dosing basis:</strong> 1.36 oz sodium thiosulfate pentahydrate crystals per 10,000 gallons per 1 ppm FC reduction. Add in stages and retest to avoid creating continuing chlorine demand.</div>
 </section>
-<section class="panel calculator-shell extra-panel" id="calhypoPanel"><div class="calculator-breadcrumb"><button class="back-button" onclick="showTab('home')">← Dashboard</button><span>/</span><strong>Manual Chlorination</strong></div><div class="calc-visual calhypo"><div class="calc-visual-copy"><span class="calc-kicker">MANUAL CHLORINATION</span><h2>Granular Cal Hypo</h2><p>Calculate Pulsar® Briquettes or Pulsar® Power Shock required to raise free chlorine.</p></div><div class="calc-visual-icon"><div class="simple-icon hero-icon">🪣</div></div></div><div class="grid"><div class="card"><h2>Inputs</h2><div class="card-body"><div class="input-section-label">POOL</div><div class="field"><label>Body of Water</label><select id="calPool"><option value="0">501 - Cutback Cove</option><option value="1">502 - Big Surf Shores</option><option value="2">503 - Omaka Rocka</option><option value="3">504 - Katas Kookaburra</option><option value="4">505 - Roa's Rapids</option><option value="5">506 - Whanau Way</option><option value="6">507 - Walkabout Waters</option><option value="7">508 - Ray Rush/Whahalla Wave</option><option value="8">509 - Loggerhead/Tassie</option><option value="9">510 - Dolphin Plunge</option><option value="10">520 - Ihu Breakaway Falls</option><option value="11">530 - Taumata Racer</option><option value="12">540 - KareKareKurl</option><option value="13">550 - Riptide</option><option value="14">Infinity Falls 1</option><option value="15">Infinity Falls 2</option><option value="16">Kraken</option><option value="17">Manta Pond</option><option value="18">Main Gate</option><option value="19">Journey to Atlantis</option><option value="20">Sesame</option><option value="21">Pearl</option><option value="22">Tropical River/Resort Pool</option><option value="23">Freshwater Oasis</option></select></div><div class="input-section-label">CURRENT</div><div class="field"><label>Current FC (ppm)</label><input id="calCurrent" type="number" min="0" max="60" step="0.1" value="1"></div><div class="input-section-label">TARGET</div><div class="field"><label>Goal FC (ppm)</label><input id="calGoal" type="number" min="0" max="60" step="0.1" value="3"></div><div class="input-section-label">PRODUCT</div><div class="field"><label>Product</label><select id="calProduct"><option value="0.65">65% - Pulsar® Briquettes</option><option value="0.68">68% - Pulsar® Power Shock</option></select></div><div class="error" id="calError"></div><div class="metric-grid"><div class="readout"><span>Pool</span><strong id="calId">501</strong></div><div class="readout"><span>Volume</span><strong id="calVol">511,740 gal</strong></div><div class="readout"><span>FC increase</span><strong id="calRise">2.0 ppm</strong></div><div class="readout"><span>Strength</span><strong id="calStrength">65%</strong></div></div></div></div><div><div class="result"><small>Cal Hypo Required</small><div class="big" id="calDose">26.3 lb</div><div class="sub" id="calMixed"></div></div><div class="tiles"><div class="tile"><span>Initial 50%</span><b id="calHalf"></b></div><div class="tile"><span>25% Stage</span><b id="calQuarter"></b></div><div class="tile"><span>50-lb Containers</span><b id="calBags"></b></div><div class="tile"><span>Product</span><b id="calProductTile"></b></div></div></div></div><div class="reference-section"><div class="reference-header"><h3>Quick Reference — +1 ppm FC</h3><p>Cal hypo required by product.</p></div><div class="table-wrap"><table class="ref-table cal-ref"><thead><tr><th>Body of Water</th><th>65%</th><th>68%</th></tr></thead><tbody><tr><td>501 - Cutback Cove</td><td>6.57 lb</td><td>6.28 lb</td></tr><tr><td>502 - Big Surf Shores</td><td>6.52 lb</td><td>6.23 lb</td></tr><tr><td>503 - Omaka Rocka</td><td>0.29 lb</td><td>0.28 lb</td></tr><tr><td>504 - Katas Kookaburra</td><td>1.02 lb</td><td>0.97 lb</td></tr><tr><td>505 - Roa's Rapids</td><td>12.03 lb</td><td>11.50 lb</td></tr><tr><td>506 - Whanau Way</td><td>1.22 lb</td><td>1.16 lb</td></tr><tr><td>507 - Walkabout Waters</td><td>2.18 lb</td><td>2.09 lb</td></tr><tr><td>508 - Ray Rush/Whahalla Wave</td><td>1.19 lb</td><td>1.14 lb</td></tr><tr><td>509 - Loggerhead/Tassie</td><td>5.11 lb</td><td>4.88 lb</td></tr><tr><td>510 - Dolphin Plunge</td><td>0.29 lb</td><td>0.27 lb</td></tr><tr><td>520 - Ihu Breakaway Falls</td><td>0.21 lb</td><td>0.20 lb</td></tr><tr><td>530 - Taumata Racer</td><td>0.16 lb</td><td>0.15 lb</td></tr><tr><td>540 - KareKareKurl</td><td>0.19 lb</td><td>0.18 lb</td></tr><tr><td>550 - Riptide</td><td>0.27 lb</td><td>0.26 lb</td></tr><tr><td>Infinity Falls 1</td><td>7.70 lb</td><td>7.36 lb</td></tr><tr><td>Infinity Falls 2</td><td>3.85 lb</td><td>3.68 lb</td></tr><tr><td>Kraken</td><td>0.62 lb</td><td>0.59 lb</td></tr><tr><td>Manta Pond</td><td>3.85 lb</td><td>3.68 lb</td></tr><tr><td>Main Gate</td><td>10.27 lb</td><td>9.82 lb</td></tr><tr><td>Journey to Atlantis</td><td>10.27 lb</td><td>9.82 lb</td></tr><tr><td>Sesame</td><td>0.11 lb</td><td>0.11 lb</td></tr><tr><td>Pearl</td><td>0.64 lb</td><td>0.61 lb</td></tr><tr><td>Tropical River/Resort Pool</td><td>15.41 lb</td><td>14.73 lb</td></tr><tr><td>Freshwater Oasis</td><td>11.97 lb</td><td>11.44 lb</td></tr></tbody></table></div></div><div class="formula-card"><h3>Formula</h3><div id="calFormula"></div></div></section><section class="panel calculator-shell extra-panel" id="alkPanel"><div class="calculator-breadcrumb"><button class="back-button" onclick="showTab('home')">← Dashboard</button><span>/</span><strong>Alkalinity</strong></div><div class="calc-visual alkalinity"><div class="calc-visual-copy"><span class="calc-kicker">TOTAL ALKALINITY</span><h2>Sodium Bicarbonate</h2><p>Calculate sodium bicarbonate required to raise measured total alkalinity.</p></div><div class="calc-visual-icon"><div class="simple-icon hero-icon">⚖️</div></div></div><div class="grid"><div class="card"><h2>Inputs</h2><div class="card-body"><div class="input-section-label">POOL</div><div class="field"><label>Body of Water</label><select id="alkPool"><option value="0">501 - Cutback Cove</option><option value="1">502 - Big Surf Shores</option><option value="2">503 - Omaka Rocka</option><option value="3">504 - Katas Kookaburra</option><option value="4">505 - Roa's Rapids</option><option value="5">506 - Whanau Way</option><option value="6">507 - Walkabout Waters</option><option value="7">508 - Ray Rush/Whahalla Wave</option><option value="8">509 - Loggerhead/Tassie</option><option value="9">510 - Dolphin Plunge</option><option value="10">520 - Ihu Breakaway Falls</option><option value="11">530 - Taumata Racer</option><option value="12">540 - KareKareKurl</option><option value="13">550 - Riptide</option><option value="14">Infinity Falls 1</option><option value="15">Infinity Falls 2</option><option value="16">Kraken</option><option value="17">Manta Pond</option><option value="18">Main Gate</option><option value="19">Journey to Atlantis</option><option value="20">Sesame</option><option value="21">Pearl</option><option value="22">Tropical River/Resort Pool</option><option value="23">Freshwater Oasis</option></select></div><div class="input-section-label">CURRENT</div><div class="field"><label>Current Total Alkalinity</label><input id="alkCurrent" type="number" min="0" max="300" value="40"></div><div class="input-section-label">TARGET</div><div class="field"><label>Goal Total Alkalinity</label><input id="alkGoal" type="number" min="0" max="300" value="80"></div><div class="error" id="alkError"></div><div class="metric-grid"><div class="readout"><span>Pool</span><strong id="alkId">501</strong></div><div class="readout"><span>Volume</span><strong id="alkVol">511,740 gal</strong></div><div class="readout"><span>TA increase</span><strong id="alkRise">40 ppm</strong></div><div class="readout"><span>Basis</span><strong>1.5 lb / 10 ppm / 10k</strong></div></div></div></div><div><div class="result"><small>Sodium Bicarbonate Required</small><div class="big" id="alkDose">307.0 lb</div><div class="sub" id="alkMixed"></div></div><div class="tiles"><div class="tile"><span>Initial 50%</span><b id="alkHalf"></b></div><div class="tile"><span>25% Stage</span><b id="alkQuarter"></b></div><div class="tile"><span>50-lb Bags</span><b id="alkBags"></b></div><div class="tile"><span>Status</span><b id="alkStatus"></b></div></div></div></div><div class="reference-section"><div class="reference-header"><h3>Quick Reference — +10 ppm TA</h3><p>Sodium bicarbonate required.</p></div><div class="table-wrap"><table class="ref-table"><thead><tr><th>Body of Water</th><th>Dose</th></tr></thead><tbody><tr><td>501 - Cutback Cove</td><td>76.8 lb</td></tr><tr><td>502 - Big Surf Shores</td><td>76.1 lb</td></tr><tr><td>503 - Omaka Rocka</td><td>3.4 lb</td></tr><tr><td>504 - Katas Kookaburra</td><td>11.9 lb</td></tr><tr><td>505 - Roa's Rapids</td><td>140.6 lb</td></tr><tr><td>506 - Whanau Way</td><td>14.2 lb</td></tr><tr><td>507 - Walkabout Waters</td><td>25.5 lb</td></tr><tr><td>508 - Ray Rush/Whahalla Wave</td><td>13.9 lb</td></tr><tr><td>509 - Loggerhead/Tassie</td><td>59.7 lb</td></tr><tr><td>510 - Dolphin Plunge</td><td>3.3 lb</td></tr><tr><td>520 - Ihu Breakaway Falls</td><td>2.4 lb</td></tr><tr><td>530 - Taumata Racer</td><td>1.9 lb</td></tr><tr><td>540 - KareKareKurl</td><td>2.2 lb</td></tr><tr><td>550 - Riptide</td><td>3.2 lb</td></tr><tr><td>Infinity Falls 1</td><td>90.0 lb</td></tr><tr><td>Infinity Falls 2</td><td>45.0 lb</td></tr><tr><td>Kraken</td><td>7.2 lb</td></tr><tr><td>Manta Pond</td><td>45.0 lb</td></tr><tr><td>Main Gate</td><td>120.0 lb</td></tr><tr><td>Journey to Atlantis</td><td>120.0 lb</td></tr><tr><td>Sesame</td><td>1.3 lb</td></tr><tr><td>Pearl</td><td>7.5 lb</td></tr><tr><td>Tropical River/Resort Pool</td><td>180.0 lb</td></tr><tr><td>Freshwater Oasis</td><td>139.8 lb</td></tr></tbody></table></div></div><div class="formula-card"><h3>Formula</h3><div id="alkFormula"></div></div></section>
-
-
+<section class="panel calculator-shell extra-panel" id="calhypoPanel"><div class="calculator-breadcrumb"><button class="back-button" onclick="showTab('home')">← Dashboard</button><span>/</span><strong>Manual Chlorination</strong></div><div class="calc-visual calhypo"><div class="calc-visual-copy"><span class="calc-kicker">MANUAL CHLORINATION</span><h2>Granular Cal Hypo</h2><p>Calculate Pulsar® Briquettes or Pulsar® Power Shock required to raise free chlorine.</p></div><div class="calc-visual-icon"><div class="simple-icon hero-icon">🪣</div></div></div><div class="grid"><div class="card"><h2>Inputs</h2><div class="card-body"><div class="input-section-label">POOL</div><div class="field"><label>Body of Water</label><select id="calPool"><option value="0">501 - Cutback Cove</option><option value="1">502 - Big Surf Shores</option><option value="2">503 - Omaka Rocka</option><option value="3">504 - Katas Kookaburra</option><option value="4">505 - Roa's Rapids</option><option value="5">506 - Whanau Way</option><option value="6">507 - Walkabout Waters</option><option value="7">508 - Ray Rush/Whahalla Wave</option><option value="8">509 - Loggerhead/Tassie</option><option value="9">510 - Dolphin Plunge</option><option value="10">520 - Ihu Breakaway Falls</option><option value="11">530 - Taumata Racer</option><option value="12">540 - KareKareKurl</option><option value="13">550 - Riptide</option><option value="14">Infinity Falls 1</option><option value="15">Infinity Falls 2</option><option value="16">Kraken</option><option value="17">Manta Pond</option><option value="18">Main Gate</option><option value="19">Journey to Atlantis</option><option value="20">Sesame</option><option value="21">Pearl</option><option value="22">Tropical River/Resort Pool</option><option value="23">Freshwater Oasis</option></select></div><div class="input-section-label">CURRENT</div><div class="field"><label>Current FC (ppm)</label><input id="calCurrent" max="60" min="0" step="0.1" type="number" value="1"/></div><div class="input-section-label">TARGET</div><div class="field"><label>Goal FC (ppm)</label><input id="calGoal" max="60" min="0" step="0.1" type="number" value="3"/></div><div class="input-section-label">PRODUCT</div><div class="field"><label>Product</label><select id="calProduct"><option value="0.65">65% - Pulsar® Briquettes</option><option value="0.68">68% - Pulsar® Power Shock</option></select></div><div class="error" id="calError"></div><div class="metric-grid"><div class="readout"><span>Pool</span><strong id="calId">501</strong></div><div class="readout"><span>Volume</span><strong id="calVol">511,740 gal</strong></div><div class="readout"><span>FC increase</span><strong id="calRise">2.0 ppm</strong></div><div class="readout"><span>Strength</span><strong id="calStrength">65%</strong></div></div></div></div><div><div class="result"><small>Cal Hypo Required</small><div class="big" id="calDose">26.3 lb</div><div class="sub" id="calMixed"></div></div><div class="tiles"><div class="tile"><span>Initial 50%</span><b id="calHalf"></b></div><div class="tile"><span>25% Stage</span><b id="calQuarter"></b></div><div class="tile"><span>50-lb Containers</span><b id="calBags"></b></div><div class="tile"><span>Product</span><b id="calProductTile"></b></div></div></div></div><div class="reference-section"><div class="reference-header"><h3>Quick Reference — +1 ppm FC</h3><p>Cal hypo required by product.</p></div><div class="table-wrap"><table class="ref-table cal-ref"><thead><tr><th>Body of Water</th><th>65%</th><th>68%</th></tr></thead><tbody><tr><td>501 - Cutback Cove</td><td>6.57 lb</td><td>6.28 lb</td></tr><tr><td>502 - Big Surf Shores</td><td>6.52 lb</td><td>6.23 lb</td></tr><tr><td>503 - Omaka Rocka</td><td>0.29 lb</td><td>0.28 lb</td></tr><tr><td>504 - Katas Kookaburra</td><td>1.02 lb</td><td>0.97 lb</td></tr><tr><td>505 - Roa's Rapids</td><td>12.03 lb</td><td>11.50 lb</td></tr><tr><td>506 - Whanau Way</td><td>1.22 lb</td><td>1.16 lb</td></tr><tr><td>507 - Walkabout Waters</td><td>2.18 lb</td><td>2.09 lb</td></tr><tr><td>508 - Ray Rush/Whahalla Wave</td><td>1.19 lb</td><td>1.14 lb</td></tr><tr><td>509 - Loggerhead/Tassie</td><td>5.11 lb</td><td>4.88 lb</td></tr><tr><td>510 - Dolphin Plunge</td><td>0.29 lb</td><td>0.27 lb</td></tr><tr><td>520 - Ihu Breakaway Falls</td><td>0.21 lb</td><td>0.20 lb</td></tr><tr><td>530 - Taumata Racer</td><td>0.16 lb</td><td>0.15 lb</td></tr><tr><td>540 - KareKareKurl</td><td>0.19 lb</td><td>0.18 lb</td></tr><tr><td>550 - Riptide</td><td>0.27 lb</td><td>0.26 lb</td></tr><tr><td>Infinity Falls 1</td><td>7.70 lb</td><td>7.36 lb</td></tr><tr><td>Infinity Falls 2</td><td>3.85 lb</td><td>3.68 lb</td></tr><tr><td>Kraken</td><td>0.62 lb</td><td>0.59 lb</td></tr><tr><td>Manta Pond</td><td>3.85 lb</td><td>3.68 lb</td></tr><tr><td>Main Gate</td><td>10.27 lb</td><td>9.82 lb</td></tr><tr><td>Journey to Atlantis</td><td>10.27 lb</td><td>9.82 lb</td></tr><tr><td>Sesame</td><td>0.11 lb</td><td>0.11 lb</td></tr><tr><td>Pearl</td><td>0.64 lb</td><td>0.61 lb</td></tr><tr><td>Tropical River/Resort Pool</td><td>15.41 lb</td><td>14.73 lb</td></tr><tr><td>Freshwater Oasis</td><td>11.97 lb</td><td>11.44 lb</td></tr></tbody></table></div></div><div class="formula-card"><h3>Formula</h3><div id="calFormula"></div></div></section><section class="panel calculator-shell extra-panel" id="alkPanel"><div class="calculator-breadcrumb"><button class="back-button" onclick="showTab('home')">← Dashboard</button><span>/</span><strong>Alkalinity</strong></div><div class="calc-visual alkalinity"><div class="calc-visual-copy"><span class="calc-kicker">TOTAL ALKALINITY</span><h2>Sodium Bicarbonate</h2><p>Calculate sodium bicarbonate required to raise measured total alkalinity.</p></div><div class="calc-visual-icon"><div class="simple-icon hero-icon">⚖️</div></div></div><div class="grid"><div class="card"><h2>Inputs</h2><div class="card-body"><div class="input-section-label">POOL</div><div class="field"><label>Body of Water</label><select id="alkPool"><option value="0">501 - Cutback Cove</option><option value="1">502 - Big Surf Shores</option><option value="2">503 - Omaka Rocka</option><option value="3">504 - Katas Kookaburra</option><option value="4">505 - Roa's Rapids</option><option value="5">506 - Whanau Way</option><option value="6">507 - Walkabout Waters</option><option value="7">508 - Ray Rush/Whahalla Wave</option><option value="8">509 - Loggerhead/Tassie</option><option value="9">510 - Dolphin Plunge</option><option value="10">520 - Ihu Breakaway Falls</option><option value="11">530 - Taumata Racer</option><option value="12">540 - KareKareKurl</option><option value="13">550 - Riptide</option><option value="14">Infinity Falls 1</option><option value="15">Infinity Falls 2</option><option value="16">Kraken</option><option value="17">Manta Pond</option><option value="18">Main Gate</option><option value="19">Journey to Atlantis</option><option value="20">Sesame</option><option value="21">Pearl</option><option value="22">Tropical River/Resort Pool</option><option value="23">Freshwater Oasis</option></select></div><div class="input-section-label">CURRENT</div><div class="field"><label>Current Total Alkalinity</label><input id="alkCurrent" max="300" min="0" type="number" value="40"/></div><div class="input-section-label">TARGET</div><div class="field"><label>Goal Total Alkalinity</label><input id="alkGoal" max="300" min="0" type="number" value="80"/></div><div class="error" id="alkError"></div><div class="metric-grid"><div class="readout"><span>Pool</span><strong id="alkId">501</strong></div><div class="readout"><span>Volume</span><strong id="alkVol">511,740 gal</strong></div><div class="readout"><span>TA increase</span><strong id="alkRise">40 ppm</strong></div><div class="readout"><span>Basis</span><strong>1.5 lb / 10 ppm / 10k</strong></div></div></div></div><div><div class="result"><small>Sodium Bicarbonate Required</small><div class="big" id="alkDose">307.0 lb</div><div class="sub" id="alkMixed"></div></div><div class="tiles"><div class="tile"><span>Initial 50%</span><b id="alkHalf"></b></div><div class="tile"><span>25% Stage</span><b id="alkQuarter"></b></div><div class="tile"><span>50-lb Bags</span><b id="alkBags"></b></div><div class="tile"><span>Status</span><b id="alkStatus"></b></div></div></div></div><div class="reference-section"><div class="reference-header"><h3>Quick Reference — +10 ppm TA</h3><p>Sodium bicarbonate required.</p></div><div class="table-wrap"><table class="ref-table"><thead><tr><th>Body of Water</th><th>Dose</th></tr></thead><tbody><tr><td>501 - Cutback Cove</td><td>76.8 lb</td></tr><tr><td>502 - Big Surf Shores</td><td>76.1 lb</td></tr><tr><td>503 - Omaka Rocka</td><td>3.4 lb</td></tr><tr><td>504 - Katas Kookaburra</td><td>11.9 lb</td></tr><tr><td>505 - Roa's Rapids</td><td>140.6 lb</td></tr><tr><td>506 - Whanau Way</td><td>14.2 lb</td></tr><tr><td>507 - Walkabout Waters</td><td>25.5 lb</td></tr><tr><td>508 - Ray Rush/Whahalla Wave</td><td>13.9 lb</td></tr><tr><td>509 - Loggerhead/Tassie</td><td>59.7 lb</td></tr><tr><td>510 - Dolphin Plunge</td><td>3.3 lb</td></tr><tr><td>520 - Ihu Breakaway Falls</td><td>2.4 lb</td></tr><tr><td>530 - Taumata Racer</td><td>1.9 lb</td></tr><tr><td>540 - KareKareKurl</td><td>2.2 lb</td></tr><tr><td>550 - Riptide</td><td>3.2 lb</td></tr><tr><td>Infinity Falls 1</td><td>90.0 lb</td></tr><tr><td>Infinity Falls 2</td><td>45.0 lb</td></tr><tr><td>Kraken</td><td>7.2 lb</td></tr><tr><td>Manta Pond</td><td>45.0 lb</td></tr><tr><td>Main Gate</td><td>120.0 lb</td></tr><tr><td>Journey to Atlantis</td><td>120.0 lb</td></tr><tr><td>Sesame</td><td>1.3 lb</td></tr><tr><td>Pearl</td><td>7.5 lb</td></tr><tr><td>Tropical River/Resort Pool</td><td>180.0 lb</td></tr><tr><td>Freshwater Oasis</td><td>139.8 lb</td></tr></tbody></table></div></div><div class="formula-card"><h3>Formula</h3><div id="alkFormula"></div></div></section>
 <section class="panel calculator-shell utilities-panel" id="utilitiesPanel">
-  <div class="calculator-breadcrumb">
-    <button class="back-button" onclick="showTab('home')">← Dashboard</button>
-    <span class="breadcrumb-separator">/</span>
-    <strong>Field Utilities</strong>
-  </div>
-
-  <div class="utilities-hero">
-    <div>
-      <span class="calc-kicker">SUPPORTING CALCULATORS</span>
-      <h2>Field Utilities</h2>
-      <p>Water-balance, conversion, and dilution tools for daily operations.</p>
-    </div>
-    <div class="utilities-hero-mark">⌁</div>
-  </div>
-
-  <div class="utility-tabs" role="tablist">
-    <button type="button" class="utility-tab active" data-utility="lsi" aria-selected="true">LSI</button>
-    <button type="button" class="utility-tab" data-utility="units" aria-selected="false">Unit Converter</button>
-    <button type="button" class="utility-tab" data-utility="dilution" aria-selected="false">Dilution</button>
-  </div>
-
-  <div class="utility-workspace active" id="lsiUtility">
-    <div class="grid">
-      <div class="card">
-        <h2>LSI Inputs</h2>
-        <div class="card-body">
-          <div class="field"><label for="lsiTemp">Water Temperature (°F)</label><input id="lsiTemp" type="number" min="32" max="120" step="0.1" value="82"></div>
-          <div class="field"><label for="lsiPH">pH</label><input id="lsiPH" type="number" min="4" max="10" step="0.01" value="7.6"></div>
-          <div class="field"><label for="lsiTA">Total Alkalinity (ppm)</label><input id="lsiTA" type="number" min="1" max="500" step="1" value="80"></div>
-          <div class="field"><label for="lsiCYA">CYA (ppm)</label><input id="lsiCYA" type="number" min="0" max="300" step="1" value="14"></div>
-          <div class="field"><label for="lsiCH">Calcium Hardness (ppm)</label><input id="lsiCH" type="number" min="1" max="1500" step="1" value="250"></div>
-          <div class="field"><label for="lsiTDS">TDS (ppm)</label><input id="lsiTDS" type="number" min="0" max="10000" step="1" value="1000"></div>
-          <div class="error" id="lsiError"></div>
-        </div>
-      </div>
-
-      <div>
-        <div class="result utility-result">
-          <small>Langelier Saturation Index</small>
-          <div class="big" id="lsiValue">0.00</div>
-          <div class="sub" id="lsiCondition">Balanced</div>
-        </div>
-        <div class="tiles">
-          <div class="tile"><span>Corrected Alkalinity</span><b id="lsiCorrectedTA">75 ppm</b></div>
-          <div class="tile"><span>Saturation pH</span><b id="lsiSaturationPH">7.60</b></div>
-          <div class="tile"><span>Water Tendency</span><b id="lsiTendency">Balanced</b></div>
-          <div class="tile"><span>Recommended Range</span><b>-0.3 to +0.3</b></div>
-        </div>
-        <div class="recommend-card">
-          <h3>Interpretation</h3>
-          <ul>
-            <li>Below -0.3 indicates increasingly corrosive water.</li>
-            <li>Above +0.3 indicates increasing scale-forming tendency.</li>
-            <li>LSI is an equilibrium indicator, not a complete corrosion assessment.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="formula-card"><h3>Method</h3><div>LSI = measured pH − saturation pH. CYA correction uses one-third of measured CYA as an operational approximation.</div></div>
-  </div>
-
-  <div class="utility-workspace" id="unitsUtility">
-    <div class="grid">
-      <div class="card">
-        <h2>Unit Conversion</h2>
-        <div class="card-body">
-          <div class="field">
-            <label for="unitCategory">Measurement Type</label>
-            <select id="unitCategory">
-              <option value="volume">Volume</option>
-              <option value="mass">Mass</option>
-              <option value="flow">Flow Rate</option>
-              <option value="temperature">Temperature</option>
-              <option value="pressure">Pressure</option>
-            </select>
-          </div>
-          <div class="field"><label for="unitInput">Value</label><input id="unitInput" type="number" step="any" value="1"></div>
-          <div class="field"><label for="unitFrom">From</label><select id="unitFrom"></select></div>
-          <div class="field"><label for="unitTo">To</label><select id="unitTo"></select></div>
-          <div class="error" id="unitError"></div>
-        </div>
-      </div>
-
-      <div>
-        <div class="result utility-result">
-          <small>Converted Value</small>
-          <div class="big" id="unitResult">1.000</div>
-          <div class="sub" id="unitResultLabel">US gallon</div>
-        </div>
-        <div class="tiles">
-          <div class="tile"><span>Input</span><b id="unitInputTile">1 gal</b></div>
-          <div class="tile"><span>Output</span><b id="unitOutputTile">1 gal</b></div>
-          <div class="tile"><span>Category</span><b id="unitCategoryTile">Volume</b></div>
-          <div class="tile"><span>Precision</span><b>6 significant digits</b></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="utility-workspace" id="dilutionUtility">
-    <div class="grid">
-      <div class="card">
-        <h2>Dilution Inputs</h2>
-        <div class="card-body">
-          <div class="field"><label for="dilStock">Stock Concentration</label><input id="dilStock" type="number" min="0.000001" step="any" value="12.5"></div>
-          <div class="field"><label for="dilTarget">Target Concentration</label><input id="dilTarget" type="number" min="0" step="any" value="1"></div>
-          <div class="field"><label for="dilFinal">Desired Final Volume</label><input id="dilFinal" type="number" min="0" step="any" value="10"></div>
-          <div class="field">
-            <label for="dilUnit">Volume Unit</label>
-            <select id="dilUnit">
-              <option value="gal">gallons</option>
-              <option value="L">liters</option>
-              <option value="fl oz">fluid ounces</option>
-              <option value="mL">milliliters</option>
-            </select>
-          </div>
-          <div class="error" id="dilError"></div>
-        </div>
-      </div>
-
-      <div>
-        <div class="result utility-result">
-          <small>Stock Product Required</small>
-          <div class="big" id="dilStockVolume">0.80 gal</div>
-          <div class="sub" id="dilWaterVolume">Add 9.20 gal water</div>
-        </div>
-        <div class="tiles">
-          <div class="tile"><span>Stock</span><b id="dilStockTile">0.80 gal</b></div>
-          <div class="tile"><span>Water / Diluent</span><b id="dilWaterTile">9.20 gal</b></div>
-          <div class="tile"><span>Final Volume</span><b id="dilFinalTile">10.00 gal</b></div>
-          <div class="tile"><span>Dilution Ratio</span><b id="dilRatioTile">1 : 11.5</b></div>
-        </div>
-        <div class="recommend-card">
-          <h3>Use Notes</h3>
-          <ul>
-            <li>Both concentration entries must use the same basis, such as percent or ppm.</li>
-            <li>Target concentration must be lower than stock concentration.</li>
-            <li>Add chemical to water according to the product SDS and site procedure.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="formula-card"><h3>Formula</h3><div>M₁V₁ = M₂V₂</div></div>
-  </div>
+<div class="calculator-breadcrumb">
+<button class="back-button" onclick="showTab('home')">← Dashboard</button>
+<span class="breadcrumb-separator">/</span>
+<strong>Field Utilities</strong>
+</div>
+<div class="utilities-hero">
+<div>
+<span class="calc-kicker">SUPPORTING CALCULATORS</span>
+<h2>Field Utilities</h2>
+<p>Water-balance, conversion, and dilution tools for daily operations.</p>
+</div>
+<div class="utilities-hero-mark">⌁</div>
+</div>
+<div class="utility-tabs" role="tablist">
+<button aria-selected="true" class="utility-tab active" data-utility="lsi" type="button">LSI</button>
+<button aria-selected="false" class="utility-tab" data-utility="units" type="button">Unit Converter</button>
+<button aria-selected="false" class="utility-tab" data-utility="dilution" type="button">Dilution</button>
+</div>
+<div class="utility-workspace active" id="lsiUtility">
+<div class="grid">
+<div class="card">
+<h2>LSI Inputs</h2>
+<div class="card-body">
+<div class="field"><label for="lsiTemp">Water Temperature (°F)</label><input id="lsiTemp" max="120" min="32" step="0.1" type="number" value="82"/></div>
+<div class="field"><label for="lsiPH">pH</label><input id="lsiPH" max="10" min="4" step="0.01" type="number" value="7.6"/></div>
+<div class="field"><label for="lsiTA">Total Alkalinity (ppm)</label><input id="lsiTA" max="500" min="1" step="1" type="number" value="80"/></div>
+<div class="field"><label for="lsiCYA">CYA (ppm)</label><input id="lsiCYA" max="300" min="0" step="1" type="number" value="14"/></div>
+<div class="field"><label for="lsiCH">Calcium Hardness (ppm)</label><input id="lsiCH" max="1500" min="1" step="1" type="number" value="250"/></div>
+<div class="field"><label for="lsiTDS">TDS (ppm)</label><input id="lsiTDS" max="10000" min="0" step="1" type="number" value="1000"/></div>
+<div class="error" id="lsiError"></div>
+</div>
+</div>
+<div>
+<div class="result utility-result">
+<small>Langelier Saturation Index</small>
+<div class="big" id="lsiValue">0.00</div>
+<div class="sub" id="lsiCondition">Balanced</div>
+</div>
+<div class="tiles">
+<div class="tile"><span>Corrected Alkalinity</span><b id="lsiCorrectedTA">75 ppm</b></div>
+<div class="tile"><span>Saturation pH</span><b id="lsiSaturationPH">7.60</b></div>
+<div class="tile"><span>Water Tendency</span><b id="lsiTendency">Balanced</b></div>
+<div class="tile"><span>Recommended Range</span><b>-0.3 to +0.3</b></div>
+</div>
+<div class="recommend-card">
+<h3>Interpretation</h3>
+<ul>
+<li>Below -0.3 indicates increasingly corrosive water.</li>
+<li>Above +0.3 indicates increasing scale-forming tendency.</li>
+<li>LSI is an equilibrium indicator, not a complete corrosion assessment.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="formula-card"><h3>Method</h3><div>LSI = measured pH − saturation pH. CYA correction uses one-third of measured CYA as an operational approximation.</div></div>
+</div>
+<div class="utility-workspace" id="unitsUtility">
+<div class="grid">
+<div class="card">
+<h2>Unit Conversion</h2>
+<div class="card-body">
+<div class="field">
+<label for="unitCategory">Measurement Type</label>
+<select id="unitCategory">
+<option value="volume">Volume</option>
+<option value="mass">Mass</option>
+<option value="flow">Flow Rate</option>
+<option value="temperature">Temperature</option>
+<option value="pressure">Pressure</option>
+</select>
+</div>
+<div class="field"><label for="unitInput">Value</label><input id="unitInput" step="any" type="number" value="1"/></div>
+<div class="field"><label for="unitFrom">From</label><select id="unitFrom"></select></div>
+<div class="field"><label for="unitTo">To</label><select id="unitTo"></select></div>
+<div class="error" id="unitError"></div>
+</div>
+</div>
+<div>
+<div class="result utility-result">
+<small>Converted Value</small>
+<div class="big" id="unitResult">1.000</div>
+<div class="sub" id="unitResultLabel">US gallon</div>
+</div>
+<div class="tiles">
+<div class="tile"><span>Input</span><b id="unitInputTile">1 gal</b></div>
+<div class="tile"><span>Output</span><b id="unitOutputTile">1 gal</b></div>
+<div class="tile"><span>Category</span><b id="unitCategoryTile">Volume</b></div>
+<div class="tile"><span>Precision</span><b>6 significant digits</b></div>
+</div>
+</div>
+</div>
+</div>
+<div class="utility-workspace" id="dilutionUtility">
+<div class="grid">
+<div class="card">
+<h2>Dilution Inputs</h2>
+<div class="card-body">
+<div class="field"><label for="dilStock">Stock Concentration</label><input id="dilStock" min="0.000001" step="any" type="number" value="12.5"/></div>
+<div class="field"><label for="dilTarget">Target Concentration</label><input id="dilTarget" min="0" step="any" type="number" value="1"/></div>
+<div class="field"><label for="dilFinal">Desired Final Volume</label><input id="dilFinal" min="0" step="any" type="number" value="10"/></div>
+<div class="field">
+<label for="dilUnit">Volume Unit</label>
+<select id="dilUnit">
+<option value="gal">gallons</option>
+<option value="L">liters</option>
+<option value="fl oz">fluid ounces</option>
+<option value="mL">milliliters</option>
+</select>
+</div>
+<div class="error" id="dilError"></div>
+</div>
+</div>
+<div>
+<div class="result utility-result">
+<small>Stock Product Required</small>
+<div class="big" id="dilStockVolume">0.80 gal</div>
+<div class="sub" id="dilWaterVolume">Add 9.20 gal water</div>
+</div>
+<div class="tiles">
+<div class="tile"><span>Stock</span><b id="dilStockTile">0.80 gal</b></div>
+<div class="tile"><span>Water / Diluent</span><b id="dilWaterTile">9.20 gal</b></div>
+<div class="tile"><span>Final Volume</span><b id="dilFinalTile">10.00 gal</b></div>
+<div class="tile"><span>Dilution Ratio</span><b id="dilRatioTile">1 : 11.5</b></div>
+</div>
+<div class="recommend-card">
+<h3>Use Notes</h3>
+<ul>
+<li>Both concentration entries must use the same basis, such as percent or ppm.</li>
+<li>Target concentration must be lower than stock concentration.</li>
+<li>Add chemical to water according to the product SDS and site procedure.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="formula-card"><h3>Formula</h3><div>M₁V₁ = M₂V₂</div></div>
+</div>
 </section>
-
-<section class="theme-panel" aria-label="Appearance">
-  <div class="theme-panel-title">Appearance</div>
-  <div class="theme-options theme-options-two">
-    <div class="theme-option">
-      <input type="radio" name="appTheme" id="themeDark" value="dark" checked>
-      <label for="themeDark">🌙 Dark</label>
-    </div>
-    <div class="theme-option">
-      <input type="radio" name="appTheme" id="themeLight" value="light">
-      <label for="themeLight">☀️ Light</label>
-    </div>
-  </div>
-  <div class="theme-note">Your selection is saved on this device.</div>
-</section>
-
 
 <div class="footer">Cory Miller is my lord and savior</div>
 </div>
 
+
+
+
 <script>
 (function(){
+'use strict';
+
 const pools=[{"id": "501", "name": "Cutback Cove", "volume": 511740, "fc5": 0.42}, {"id": "502", "name": "Big Surf Shores", "volume": 507477, "fc5": 0.42}, {"id": "503", "name": "Omaka Rocka", "volume": 22709, "fc5": 0.5}, {"id": "504", "name": "Katas Kookaburra", "volume": 79215, "fc5": 1.35}, {"id": "505", "name": "Roa's Rapids", "volume": 937210, "fc5": 0.34}, {"id": "506", "name": "Whanau Way", "volume": 94930, "fc5": 1.12}, {"id": "507", "name": "Walkabout Waters", "volume": 170000, "fc5": 1.25}, {"id": "508", "name": "Ray Rush/Whahalla Wave", "volume": 92500, "fc5": 0.58}, {"id": "509", "name": "Loggerhead/Tassie", "volume": 397700, "fc5": 0.54}, {"id": "510", "name": "Dolphin Plunge", "volume": 22326, "fc5": 0.72}, {"id": "520", "name": "Ihu Breakaway Falls", "volume": 16128, "fc5": 1.0}, {"id": "530", "name": "Taumata Racer", "volume": 12342, "fc5": 1.31}, {"id": "540", "name": "KareKareKurl", "volume": 15000, "fc5": 3.56}, {"id": "550", "name": "Riptide", "volume": 21000, "fc5": 0.77}, {"id": "\u2014", "name": "Infinity Falls 1", "volume": 600000, "fc5": 0.18}, {"id": "\u2014", "name": "Infinity Falls 2", "volume": 300000, "fc5": 0.36}, {"id": "\u2014", "name": "Kraken", "volume": 48000, "fc5": 1.89}, {"id": "\u2014", "name": "Manta Pond", "volume": 300000, "fc5": 0.3}, {"id": "\u2014", "name": "Main Gate", "volume": 800000, "fc5": 0.34}, {"id": "\u2014", "name": "Journey to Atlantis", "volume": 800000, "fc5": 0.27}, {"id": "\u2014", "name": "Sesame", "volume": 8800, "fc5": 1.83}, {"id": "\u2014", "name": "Pearl", "volume": 50000, "fc5": 0.32}, {"id": "\u2014", "name": "Tropical River/Resort Pool", "volume": 1200000, "fc5": 0.36}, {"id": "\u2014", "name": "Freshwater Oasis", "volume": 932000, "fc5": 0.34}];
 
-function fmtTime(mins){
-  let total=Math.max(0,Math.round(mins*60));
-  let h=Math.floor(total/3600), m=Math.floor((total%3600)/60), s=total%60;
-  return (h?h+' hr ':'')+m+' min '+s+' sec';
+function byId(id){ return document.getElementById(id); }
+function numberValue(id){ return parseFloat(byId(id).value); }
+function selectedPool(id){
+  const select=byId(id);
+  const index=Math.max(0,select.selectedIndex);
+  return pools[index] || pools[0];
+}
+function setText(id,value){
+  const node=byId(id);
+  if(node) node.textContent=value;
+}
+function showError(id,message){
+  const node=byId(id);
+  if(!node)return;
+  node.textContent=message || '';
+  node.classList.toggle('show',Boolean(message));
+}
+function fmtLb(value){
+  return value.toLocaleString(undefined,{minimumFractionDigits:1,maximumFractionDigits:1})+' lb';
+}
+function fmtMixed(value){
+  const pounds=Math.floor(Math.max(0,value));
+  const ounces=(Math.max(0,value)-pounds)*16;
+  return pounds.toLocaleString()+' lb '+ounces.toFixed(1)+' oz';
+}
+function fmtTime(minutes){
+  const seconds=Math.max(0,Math.round(minutes*60));
+  const hours=Math.floor(seconds/3600);
+  const mins=Math.floor((seconds%3600)/60);
+  const secs=seconds%60;
+  return (hours?hours+' hr ':'')+mins+' min '+secs+' sec';
 }
 
 window.showTab=function(name){
-  const isHome=name==='home';
-  document.getElementById('opsDashboard').classList.toggle('hidden',!isHome);
+  const dashboard=byId('opsDashboard');
+  if(dashboard)dashboard.classList.toggle('hidden',name!=='home');
   ['soda','fc','cya','dechlor','calhypo','alk','utilities'].forEach(function(key){
-    const panel=document.getElementById(key+'Panel');
+    const panel=byId(key+'Panel');
     if(panel)panel.classList.toggle('active',name===key);
   });
-  localStorage.setItem('poolToolsTab',name);
+  try{localStorage.setItem('poolToolsTab',name);}catch(error){}
   window.scrollTo({top:0,behavior:'smooth'});
 };
 
-
-function setInvalidDechlor(message){
-  document.getElementById('dechlorResult').classList.add('invalid');
-  document.getElementById('dechlorDose').textContent='Invalid FC';
-  document.getElementById('dechlorMixed').textContent='No dose calculated';
-  document.getElementById('dechlorReduction').textContent='—';
-  document.getElementById('dechlor50').textContent='—';
-  document.getElementById('dechlor25').textContent='—';
-  document.getElementById('dechlorBags').textContent='—';
-  document.getElementById('dechlorStatus').textContent='Invalid';
-  document.getElementById('dechlorFormula').textContent=message;
-}
-function clearInvalidDechlor(){ document.getElementById('dechlorResult').classList.remove('invalid'); }
-function updateDechlor(){
-  const p=selectedPool('dechlorPool');
-  const rc=document.getElementById('dechlorCurrent').value.trim();
-  const rg=document.getElementById('dechlorGoal').value.trim();
-  const current=parseFloat(rc), goal=parseFloat(rg);
-  const ce=document.getElementById('dechlorCurrentError'), ge=document.getElementById('dechlorGoalError');
-  document.getElementById('dechlorId').textContent=p.id;
-  document.getElementById('dechlorVolume').textContent=p.volume.toLocaleString()+' gal';
-  ce.classList.remove('show'); ge.classList.remove('show');
-  document.getElementById('dechlorCurrent').classList.remove('invalid');
-  document.getElementById('dechlorGoal').classList.remove('invalid');
-  let ok=true;
-  if(rc===''||!isFinite(current)||current<0||current>60){ ce.textContent='Enter current FC between 0 and 60 ppm.';ce.classList.add('show');document.getElementById('dechlorCurrent').classList.add('invalid');ok=false; }
-  if(rg===''||!isFinite(goal)||goal<0||goal>60){ ge.textContent='Enter goal FC between 0 and 60 ppm.';ge.classList.add('show');document.getElementById('dechlorGoal').classList.add('invalid');ok=false; }
-  else if(isFinite(current)&&goal>current){ ge.textContent='Goal FC cannot exceed current FC.';ge.classList.add('show');document.getElementById('dechlorGoal').classList.add('invalid');ok=false; }
-  if(!ok){ setInvalidDechlor('Enter valid current and goal FC values to calculate a dose.');return; }
-  clearInvalidDechlor();
-  const reduction=current-goal;
-  const oz=p.volume/10000*reduction*1.36;
-  const lb=oz/16;
-  const whole=Math.floor(lb), remoz=(lb-whole)*16;
-  document.getElementById('dechlorReduction').textContent=reduction.toFixed(1)+' ppm';
-  document.getElementById('dechlorDose').textContent=lb.toLocaleString(undefined,{minimumFractionDigits:1,maximumFractionDigits:1})+' lb';
-  document.getElementById('dechlorMixed').textContent=whole.toLocaleString()+' lb '+remoz.toFixed(1)+' oz';
-  document.getElementById('dechlor50').textContent=(lb*.5).toLocaleString(undefined,{minimumFractionDigits:1,maximumFractionDigits:1})+' lb';
-  document.getElementById('dechlor25').textContent=(lb*.25).toLocaleString(undefined,{minimumFractionDigits:1,maximumFractionDigits:1})+' lb';
-  document.getElementById('dechlorBags').textContent=(lb/50).toFixed(2);
-  const alert=document.getElementById('dechlorAlert');alert.className='alert';
-  if(reduction===0){ document.getElementById('dechlorStatus').textContent='No Action';alert.classList.add('info','show');alert.textContent='FC is already at the selected goal. No dechlorination is required.'; }
-  else if(reduction>10){ document.getElementById('dechlorStatus').textContent='Very High';alert.classList.add('warning','show');alert.textContent='Very large chlorine reduction: add 50% initially, circulate 15–30 minutes, and retest before additional dosing.'; }
-  else if(reduction>5){ document.getElementById('dechlorStatus').textContent='High Reduction';alert.classList.add('caution','show');alert.textContent='Large chlorine reduction: stage the addition and retest before completing the dose.'; }
-  else { document.getElementById('dechlorStatus').textContent='Retest';alert.classList.add('info','show');alert.textContent='Add a partial dose, circulate, and retest before completing the calculated amount.'; }
-  document.getElementById('dechlorFormula').textContent='Dose (oz) = ('+p.volume.toLocaleString()+' ÷ 10,000) × '+reduction.toFixed(2)+' × 1.36 = '+oz.toFixed(2)+' oz; Dose (lb) = '+lb.toFixed(2)+' lb';
-}
-
-['sodaPool','currentPH'].forEach(id=>{
-  const el=document.getElementById(id);
-  el.addEventListener('change',updateSoda);
-  el.addEventListener('input',updateSoda);
-});
-['fcPool','desiredFC'].forEach(id=>{
-  const el=document.getElementById(id);
-  el.addEventListener('change',updateFC);
-  el.addEventListener('input',updateFC);
-});
-['cyaPool','currentCYA'].forEach(id=>{
-  const el=document.getElementById(id);
-  ['change','input','blur','keyup','touchend'].forEach(evt=>{
-    el.addEventListener(evt,updateCYA);
+window.showUtility=function(name){
+  document.querySelectorAll('.utility-workspace').forEach(function(node){
+    const active=node.id===name+'Utility';
+    node.classList.toggle('active',active);
+    node.hidden=!active;
   });
-});
-
-['dechlorPool','dechlorCurrent','dechlorGoal'].forEach(id=>{
-  const el=document.getElementById(id);
-  ['change','input','blur','keyup','touchend'].forEach(evt=>el.addEventListener(evt,updateDechlor));
-});
-
-let lastCyaPool=-1;
-let lastCyaValue='';
-setInterval(function(){
-  updateSoda();
-  updateFC();
-  updateDechlor();
-
-  const cyaPool=document.getElementById('cyaPool');
-  const cyaInput=document.getElementById('currentCYA');
-  if(cyaPool.selectedIndex!==lastCyaPool || cyaInput.value!==lastCyaValue){
-    updateCYA();
-    lastCyaPool=cyaPool.selectedIndex;
-    lastCyaValue=cyaInput.value;
-  }
-},250);
-
-document.addEventListener('visibilitychange',function(){
-  if(!document.hidden) updateCYA();
-});
-window.addEventListener('focus',updateCYA);
-window.addEventListener('pageshow',updateCYA);
-
-const savedCyaPool=parseInt(localStorage.getItem('cyaPoolIndex'),10);
-if(Number.isFinite(savedCyaPool) && pools[savedCyaPool]){
-  document.getElementById('cyaPool').selectedIndex=savedCyaPool;
-}
-const savedCyaValue=localStorage.getItem('currentCYA');
-if(savedCyaValue!==null && savedCyaValue!==''){
-  document.getElementById('currentCYA').value=savedCyaValue;
-}
-
-showTab('home');
-updateSoda();
-updateFC();
-updateCYA();
-updateDechlor();
-
-
-
-function enhanceCalculatorLayout(){
-  document.querySelectorAll('.calculator-shell').forEach(panel=>{
-    const inputCard=panel.querySelector('.grid .card:first-child .card-body');
-    if(!inputCard||inputCard.dataset.enhanced==='true')return;
-    inputCard.dataset.enhanced='true';
-
-    const fields=[...inputCard.querySelectorAll(':scope > .field')];
-    fields.forEach((field,index)=>{
-      const label=document.createElement('div');
-      label.className='input-section-label';
-      if(index===0)label.textContent='POOL';
-      else if(index===1)label.textContent=panel.id==='fcPanel'?'REQUESTED CHANGE':'CURRENT';
-      else label.textContent='TARGET';
-      field.before(label);
-    });
-
-    const readouts=[...inputCard.querySelectorAll(':scope > .readout')];
-    if(readouts.length){
-      const grid=document.createElement('div');
-      grid.className='metric-grid';
-      readouts[0].before(grid);
-      readouts.forEach(r=>grid.appendChild(r));
-    }
+  document.querySelectorAll('.utility-tab').forEach(function(button){
+    const active=button.dataset.utility===name;
+    button.classList.toggle('active',active);
+    button.setAttribute('aria-selected',active?'true':'false');
   });
+};
 
-  document.querySelectorAll('.reference-section tbody').forEach(tbody=>{
-    const rows=[...tbody.querySelectorAll('tr')];
-    const values=rows.map(row=>{
-      const text=row.lastElementChild?.textContent||'';
-      const n=parseFloat(text.replace(/[^0-9.-]/g,''));
-      return Number.isFinite(n)?n:0;
-    }).sort((a,b)=>a-b);
-    if(!values.length)return;
-    const q1=values[Math.floor((values.length-1)*.25)];
-    const q2=values[Math.floor((values.length-1)*.50)];
-    const q3=values[Math.floor((values.length-1)*.75)];
-    rows.forEach(row=>{
-      const n=parseFloat((row.lastElementChild?.textContent||'').replace(/[^0-9.-]/g,''));
-      if(!Number.isFinite(n))return;
-      const level=n<=q1?'level-low':n<=q2?'level-medium':n<=q3?'level-high':'level-critical';
-      row.classList.add(level);
-    });
-  });
-}
-enhanceCalculatorLayout();
+function updateSoda(){
+  const pool=selectedPool('sodaPool');
+  const current=numberValue('currentPH');
+  const goal=7.6;
 
-function pickPool(id){const e=document.getElementById(id);return pools[e.selectedIndex>=0?e.selectedIndex:0]}function mixW(lb){const w=Math.floor(lb),o=(lb-w)*16;return w.toLocaleString()+" lb "+o.toFixed(1)+" oz"}function updateCal(){const p=pickPool('calPool'),c=+calCurrent.value,g=+calGoal.value,s=+calProduct.value;if(!Number.isFinite(c)||!Number.isFinite(g)||c<0||g<0||c>60||g>60||g<c){calError.textContent='Enter valid FC values; goal must be at or above current.';calError.classList.add('show');return}calError.classList.remove('show');const r=g-c,d=p.volume*r*8.345e-6/s;calId.textContent=p.id;calVol.textContent=p.volume.toLocaleString()+' gal';calRise.textContent=r.toFixed(1)+' ppm';calStrength.textContent=(s*100).toFixed(0)+'%';calDose.textContent=d.toFixed(1)+' lb';calMixed.textContent=mixW(d);calHalf.textContent=(d*.5).toFixed(1)+' lb';calQuarter.textContent=(d*.25).toFixed(1)+' lb';calBags.textContent=(d/50).toFixed(2);calProductTile.textContent=s===.65?'Briquettes':'Power Shock';calFormula.textContent='Dose = '+p.volume.toLocaleString()+' × '+r.toFixed(2)+' × 8.345×10⁻⁶ ÷ '+s.toFixed(2)+' = '+d.toFixed(2)+' lb'}function updateAlk(){const p=pickPool('alkPool'),c=+alkCurrent.value,g=+alkGoal.value;if(!Number.isFinite(c)||!Number.isFinite(g)||c<0||g<0||c>300||g>300||g<c){alkError.textContent='Enter valid TA values; goal must be at or above current.';alkError.classList.add('show');return}alkError.classList.remove('show');const r=g-c,d=p.volume/10000*r/10*1.5;alkId.textContent=p.id;alkVol.textContent=p.volume.toLocaleString()+' gal';alkRise.textContent=r.toFixed(0)+' ppm';alkDose.textContent=d.toFixed(1)+' lb';alkMixed.textContent=mixW(d);alkHalf.textContent=(d*.5).toFixed(1)+' lb';alkQuarter.textContent=(d*.25).toFixed(1)+' lb';alkBags.textContent=(d/50).toFixed(2);alkStatus.textContent=r>0?'Retest':'No Action';alkFormula.textContent='Dose = ('+p.volume.toLocaleString()+' ÷ 10,000) × ('+r.toFixed(0)+' ÷ 10) × 1.5 = '+d.toFixed(2)+' lb'}['calPool','calCurrent','calGoal','calProduct'].forEach(id=>['input','change'].forEach(ev=>document.getElementById(id).addEventListener(ev,updateCal)));['alkPool','alkCurrent','alkGoal'].forEach(id=>['input','change'].forEach(ev=>document.getElementById(id).addEventListener(ev,updateAlk)));updateCal();updateAlk();
+  setText('sodaId',pool.id);
+  setText('sodaVolume',pool.volume.toLocaleString()+' gal');
 
-
-const appThemeMedia=window.matchMedia('(prefers-color-scheme: light)');
-function resolvedAppTheme(selection){
-  return selection==='auto'?(appThemeMedia.matches?'light':'dark'):selection;
-}
-function applyAppTheme(selection){
-  const chosen=['light','dark','auto'].includes(selection)?selection:'auto';
-  const resolved=resolvedAppTheme(chosen);
-  const isLight=resolved==='light';
-  document.body.classList.toggle('light-mode',isLight);
-  document.documentElement.style.colorScheme=resolved;
-  ['light','dark','auto'].forEach(function(value){
-    const control=document.getElementById('theme'+value.charAt(0).toUpperCase()+value.slice(1));
-    if(control)control.checked=chosen===value;
-  });
-  localStorage.setItem('swChemTheme',chosen);
-  const themeMeta=document.querySelector('meta[name="theme-color"]');
-  if(themeMeta)themeMeta.setAttribute('content',isLight?'#edf4f9':'#041b3d');
-}
-document.querySelectorAll('input[name="appTheme"]').forEach(function(input){
-  input.addEventListener('change',function(){if(this.checked)applyAppTheme(this.value);});
-});
-appThemeMedia.addEventListener?.('change',function(){
-  if((localStorage.getItem('swChemTheme')||'auto')==='auto')applyAppTheme('auto');
-});
-applyAppTheme(localStorage.getItem('swChemTheme')||'auto');
-
-
-function showUtility(name){
-  document.querySelectorAll('.utility-workspace').forEach(function(el){el.classList.remove('active');});
-  document.querySelectorAll('.utility-tab').forEach(function(el){el.classList.toggle('active',el.dataset.utility===name);});
-  const target=document.getElementById(name+'Utility');
-  if(target)target.classList.add('active');
-}
-window.showUtility=showUtility;
-
-function numericValue(id){
-  return parseFloat(document.getElementById(id).value);
-}
-function setUtilityError(id,message){
-  const el=document.getElementById(id);
-  el.textContent=message||'';
-  el.classList.toggle('show',Boolean(message));
-}
-function updateLSI(){
-  const tempF=numericValue('lsiTemp');
-  const pH=numericValue('lsiPH');
-  const ta=numericValue('lsiTA');
-  const cya=numericValue('lsiCYA');
-  const ch=numericValue('lsiCH');
-  const tds=numericValue('lsiTDS');
-  if([tempF,pH,ta,cya,ch,tds].some(v=>!Number.isFinite(v))||tempF<32||tempF>120||pH<4||pH>10||ta<=0||ch<=0||cya<0||tds<0){
-    setUtilityError('lsiError','Enter valid values within the displayed ranges.');
+  if(!Number.isFinite(current) || current<4 || current>7.6){
+    showError('phError','Enter a current pH between 4.0 and 7.6.');
+    setText('sodaDose','Invalid pH');
     return;
   }
-  setUtilityError('lsiError','');
+  showError('phError','');
+
+  const increase=Math.max(0,goal-current);
+  const rate=3*(increase/1.6);
+  const dose=(pool.volume/10000)*rate;
+
+  setText('phShift',increase.toFixed(1)+' units');
+  setText('sodaRate',rate.toFixed(2)+' lb/10k gal');
+  setText('sodaDose',fmtLb(dose));
+  setText('sodaMixed',fmtMixed(dose));
+  setText('soda25',fmtLb(dose*.25));
+  setText('soda50',fmtLb(dose*.50));
+  setText('sodaBags',(dose/50).toFixed(2));
+  setText('sodaFormula','Dose = ('+pool.volume.toLocaleString()+' ÷ 10,000) × 3 × ('+increase.toFixed(2)+' ÷ 1.6) = '+dose.toFixed(2)+' lb');
+}
+
+function updateFC(){
+  const pool=selectedPool('fcPool');
+  const desired=numberValue('desiredFC');
+
+  setText('fcId',pool.id);
+  setText('fcVolume',pool.volume.toLocaleString()+' gal');
+  setText('fcRate',pool.fc5.toFixed(2)+' ppm per 5 min');
+
+  if(!Number.isFinite(desired) || desired<0.1 || desired>60){
+    showError('fcError','Enter a desired FC increase between 0.1 and 60 ppm.');
+    setText('fcTime','Invalid input');
+    return;
+  }
+  showError('fcError','');
+
+  const minutes=(desired/pool.fc5)*5;
+  setText('fcTime',fmtTime(minutes));
+  setText('fcDecimal',minutes.toFixed(1)+' min');
+  setText('fcDesiredTile',desired.toFixed(1)+' ppm');
+  setText('fcCycles',(minutes/5).toFixed(2));
+  setText('fcHalf',fmtTime(minutes*.5));
+  setText('fcFormula','Feed time = ('+desired.toFixed(2)+' ÷ '+pool.fc5.toFixed(2)+') × 5 = '+minutes.toFixed(2)+' minutes');
+}
+
+function updateCYA(){
+  const pool=selectedPool('cyaPool');
+  const current=numberValue('currentCYA');
+  const goal=14;
+
+  setText('cyaId',pool.id);
+  setText('cyaVolume',pool.volume.toLocaleString()+' gal');
+  setText('cyaPerPpm',(pool.volume/120000).toFixed(2)+' lb per ppm');
+
+  ['cyaWarning','cyaCaution','cyaInfo'].forEach(function(id){
+    const node=byId(id);
+    if(node)node.classList.remove('show');
+  });
+
+  if(!Number.isFinite(current) || current<0 || current>300){
+    showError('cyaError','Enter current CYA between 0 and 300 ppm.');
+    setText('cyaDose','Invalid CYA');
+    return;
+  }
+  showError('cyaError','');
+
+  const increase=Math.max(0,goal-current);
+  const dose=(pool.volume/120000)*increase;
+
+  setText('cyaIncrease',increase.toFixed(1)+' ppm');
+  setText('cyaDose',fmtLb(dose));
+  setText('cyaMixed',fmtMixed(dose));
+  setText('cyaNeededTile',increase.toFixed(1)+' ppm');
+  setText('cya25',fmtLb(dose*.25));
+  setText('cyaBags',(dose/50).toFixed(2));
+
+  if(current<=7){
+    const node=byId('cyaWarning'); if(node)node.classList.add('show');
+  }else if(current<=10){
+    const node=byId('cyaCaution'); if(node)node.classList.add('show');
+  }else if(current>=14){
+    const node=byId('cyaInfo'); if(node)node.classList.add('show');
+  }
+
+  setText('cyaFormula','Dose = ('+pool.volume.toLocaleString()+' ÷ 120,000) × '+increase.toFixed(2)+' = '+dose.toFixed(2)+' lb');
+}
+
+function updateDechlor(){
+  const pool=selectedPool('dechlorPool');
+  const current=numberValue('dechlorCurrent');
+  const goal=numberValue('dechlorGoal');
+
+  setText('dechlorId',pool.id);
+  setText('dechlorVolume',pool.volume.toLocaleString()+' gal');
+
+  let error='';
+  if(!Number.isFinite(current)||current<0||current>60)error='Current FC must be between 0 and 60 ppm.';
+  else if(!Number.isFinite(goal)||goal<0||goal>60)error='Goal FC must be between 0 and 60 ppm.';
+  else if(goal>current)error='Goal FC cannot exceed current FC.';
+
+  showError('dechlorCurrentError',error && error.startsWith('Current')?error:'');
+  showError('dechlorGoalError',error && !error.startsWith('Current')?error:'');
+  if(error){
+    setText('dechlorDose','Invalid FC');
+    return;
+  }
+
+  const reduction=current-goal;
+  const ounces=(pool.volume/10000)*reduction*1.36;
+  const pounds=ounces/16;
+
+  setText('dechlorReduction',reduction.toFixed(1)+' ppm');
+  setText('dechlorDose',fmtLb(pounds));
+  setText('dechlorMixed',fmtMixed(pounds));
+  setText('dechlor50',fmtLb(pounds*.50));
+  setText('dechlor25',fmtLb(pounds*.25));
+  setText('dechlorBags',(pounds/50).toFixed(2));
+  setText('dechlorStatus',reduction===0?'No Action':reduction>10?'Very High':reduction>5?'High Reduction':'Retest');
+  setText('dechlorFormula','Dose = ('+pool.volume.toLocaleString()+' ÷ 10,000) × '+reduction.toFixed(2)+' × 1.36 oz = '+pounds.toFixed(2)+' lb');
+}
+
+function updateCalHypo(){
+  const pool=selectedPool('calPool');
+  const current=numberValue('calCurrent');
+  const goal=numberValue('calGoal');
+  const strength=numberValue('calProduct');
+
+  setText('calId',pool.id);
+  setText('calVol',pool.volume.toLocaleString()+' gal');
+  setText('calStrength',(strength*100).toFixed(0)+'%');
+
+  if(!Number.isFinite(current)||!Number.isFinite(goal)||current<0||goal<0||current>60||goal>60||goal<current){
+    showError('calError','Enter valid FC values; goal must be at or above current.');
+    setText('calDose','Invalid FC');
+    return;
+  }
+  showError('calError','');
+
+  const increase=goal-current;
+  const dose=pool.volume*increase*8.345e-6/strength;
+
+  setText('calRise',increase.toFixed(1)+' ppm');
+  setText('calDose',fmtLb(dose));
+  setText('calMixed',fmtMixed(dose));
+  setText('calHalf',fmtLb(dose*.50));
+  setText('calQuarter',fmtLb(dose*.25));
+  setText('calBags',(dose/50).toFixed(2));
+  setText('calProductTile',strength===0.65?'Briquettes':'Power Shock');
+  setText('calFormula','Dose = '+pool.volume.toLocaleString()+' × '+increase.toFixed(2)+' × 8.345×10⁻⁶ ÷ '+strength.toFixed(2)+' = '+dose.toFixed(2)+' lb');
+}
+
+function updateAlkalinity(){
+  const pool=selectedPool('alkPool');
+  const current=numberValue('alkCurrent');
+  const goal=numberValue('alkGoal');
+
+  setText('alkId',pool.id);
+  setText('alkVol',pool.volume.toLocaleString()+' gal');
+
+  if(!Number.isFinite(current)||!Number.isFinite(goal)||current<0||goal<0||current>300||goal>300||goal<current){
+    showError('alkError','Enter valid TA values; goal must be at or above current.');
+    setText('alkDose','Invalid TA');
+    return;
+  }
+  showError('alkError','');
+
+  const increase=goal-current;
+  const dose=(pool.volume/10000)*(increase/10)*1.5;
+
+  setText('alkRise',increase.toFixed(0)+' ppm');
+  setText('alkDose',fmtLb(dose));
+  setText('alkMixed',fmtMixed(dose));
+  setText('alkHalf',fmtLb(dose*.50));
+  setText('alkQuarter',fmtLb(dose*.25));
+  setText('alkBags',(dose/50).toFixed(2));
+  setText('alkStatus',increase>0?'Retest':'No Action');
+  setText('alkFormula','Dose = ('+pool.volume.toLocaleString()+' ÷ 10,000) × ('+increase.toFixed(0)+' ÷ 10) × 1.5 = '+dose.toFixed(2)+' lb');
+}
+
+function updateLSI(){
+  const tempF=numberValue('lsiTemp');
+  const pH=numberValue('lsiPH');
+  const ta=numberValue('lsiTA');
+  const cya=numberValue('lsiCYA');
+  const ch=numberValue('lsiCH');
+  const tds=numberValue('lsiTDS');
+
+  if([tempF,pH,ta,cya,ch,tds].some(function(v){return !Number.isFinite(v);}) || tempF<32 || tempF>120 || pH<4 || pH>10 || ta<=0 || ch<=0 || cya<0 || tds<0){
+    showError('lsiError','Enter valid values within the displayed ranges.');
+    return;
+  }
+  showError('lsiError','');
+
   const tempC=(tempF-32)*5/9;
-  const correctedTA=Math.max(1,ta-(cya/3));
+  const correctedTA=Math.max(1,ta-cya/3);
   const A=(Math.log10(Math.max(1,tds))-1)/10;
   const B=-13.12*Math.log10(tempC+273)+34.55;
   const C=Math.log10(ch)-0.4;
   const D=Math.log10(correctedTA);
   const saturationPH=(9.3+A+B)-(C+D);
   const lsi=pH-saturationPH;
+
   let condition='Balanced', tendency='Near equilibrium';
-  if(lsi < -0.3){condition='Corrosive tendency';tendency='Under-saturated';}
-  else if(lsi > 0.3){condition='Scale tendency';tendency='Over-saturated';}
-  document.getElementById('lsiValue').textContent=(lsi>=0?'+':'')+lsi.toFixed(2);
-  document.getElementById('lsiCondition').textContent=condition;
-  document.getElementById('lsiCorrectedTA').textContent=correctedTA.toFixed(0)+' ppm';
-  document.getElementById('lsiSaturationPH').textContent=saturationPH.toFixed(2);
-  document.getElementById('lsiTendency').textContent=tendency;
+  if(lsi<-0.3){condition='Corrosive tendency';tendency='Under-saturated';}
+  else if(lsi>0.3){condition='Scale tendency';tendency='Over-saturated';}
+
+  setText('lsiValue',(lsi>=0?'+':'')+lsi.toFixed(2));
+  setText('lsiCondition',condition);
+  setText('lsiCorrectedTA',correctedTA.toFixed(0)+' ppm');
+  setText('lsiSaturationPH',saturationPH.toFixed(2));
+  setText('lsiTendency',tendency);
 }
 
 const unitDefinitions={
-  volume:{
-    label:'Volume',
-    units:{
-      gal:{name:'US gallon',symbol:'gal',factor:3.785411784},
-      L:{name:'liter',symbol:'L',factor:1},
-      mL:{name:'milliliter',symbol:'mL',factor:.001},
-      floz:{name:'US fluid ounce',symbol:'fl oz',factor:.0295735295625},
-      qt:{name:'US quart',symbol:'qt',factor:.946352946},
-      ft3:{name:'cubic foot',symbol:'ft³',factor:28.316846592}
-    }
-  },
-  mass:{
-    label:'Mass',
-    units:{
-      lb:{name:'pound',symbol:'lb',factor:.45359237},
-      oz:{name:'ounce',symbol:'oz',factor:.028349523125},
-      kg:{name:'kilogram',symbol:'kg',factor:1},
-      g:{name:'gram',symbol:'g',factor:.001}
-    }
-  },
-  flow:{
-    label:'Flow Rate',
-    units:{
-      gpm:{name:'gallon per minute',symbol:'gpm',factor:3.785411784},
-      gph:{name:'gallon per hour',symbol:'gph',factor:.0630901964},
-      lpm:{name:'liter per minute',symbol:'L/min',factor:1},
-      lps:{name:'liter per second',symbol:'L/s',factor:60},
-      m3h:{name:'cubic meter per hour',symbol:'m³/h',factor:16.666666667}
-    }
-  },
-  temperature:{
-    label:'Temperature',
-    units:{
-      F:{name:'degrees Fahrenheit',symbol:'°F'},
-      C:{name:'degrees Celsius',symbol:'°C'},
-      K:{name:'kelvin',symbol:'K'}
-    }
-  },
-  pressure:{
-    label:'Pressure',
-    units:{
-      psi:{name:'pounds per square inch',symbol:'psi',factor:6.894757293},
-      kPa:{name:'kilopascal',symbol:'kPa',factor:1},
-      bar:{name:'bar',symbol:'bar',factor:100},
-      inHg:{name:'inch of mercury',symbol:'inHg',factor:3.386389}
-    }
-  }
+  volume:{label:'Volume',units:[
+    ['gal','US gallon','gal',3.785411784],['L','liter','L',1],['mL','milliliter','mL',.001],
+    ['floz','US fluid ounce','fl oz',.0295735295625],['qt','US quart','qt',.946352946],['ft3','cubic foot','ft³',28.316846592]
+  ]},
+  mass:{label:'Mass',units:[
+    ['lb','pound','lb',.45359237],['oz','ounce','oz',.028349523125],['kg','kilogram','kg',1],['g','gram','g',.001]
+  ]},
+  flow:{label:'Flow Rate',units:[
+    ['gpm','gallons per minute','gpm',3.785411784],['gph','gallons per hour','gph',.0630901964],
+    ['lpm','liters per minute','L/min',1],['lps','liters per second','L/s',60],['m3h','cubic meters per hour','m³/h',16.666666667]
+  ]},
+  temperature:{label:'Temperature',units:[
+    ['F','degrees Fahrenheit','°F',null],['C','degrees Celsius','°C',null],['K','kelvin','K',null]
+  ]},
+  pressure:{label:'Pressure',units:[
+    ['psi','pounds per square inch','psi',6.894757293],['kPa','kilopascal','kPa',1],
+    ['bar','bar','bar',100],['inHg','inch of mercury','inHg',3.386389]
+  ]}
 };
-function populateUnitMenus(){
-  const category=document.getElementById('unitCategory').value;
-  const def=unitDefinitions[category];
-  const from=document.getElementById('unitFrom');
-  const to=document.getElementById('unitTo');
-  const oldFrom=from.value, oldTo=to.value;
-  from.innerHTML='';to.innerHTML='';
-  Object.entries(def.units).forEach(function([key,u]){
-    from.add(new Option(u.name,key));
-    to.add(new Option(u.name,key));
+
+function unitRecord(category,key){
+  return unitDefinitions[category].units.find(function(unit){return unit[0]===key;});
+}
+function populateUnits(){
+  const category=byId('unitCategory').value;
+  const from=byId('unitFrom');
+  const to=byId('unitTo');
+  const list=unitDefinitions[category].units;
+  from.innerHTML='';
+  to.innerHTML='';
+  list.forEach(function(unit,index){
+    const a=document.createElement('option');
+    a.value=unit[0]; a.textContent=unit[1];
+    const b=a.cloneNode(true);
+    from.appendChild(a);
+    to.appendChild(b);
   });
-  if(def.units[oldFrom])from.value=oldFrom;
-  if(def.units[oldTo])to.value=oldTo;
-  if(from.value===to.value && to.options.length>1)to.selectedIndex=1;
-  updateUnitConverter();
+  from.selectedIndex=0;
+  to.selectedIndex=list.length>1?1:0;
+  updateUnits();
 }
-function toCelsius(value,unit){
-  if(unit==='C')return value;
-  if(unit==='F')return (value-32)*5/9;
-  return value-273.15;
+function toCelsius(value,unit){return unit==='C'?value:unit==='F'?(value-32)*5/9:value-273.15;}
+function fromCelsius(value,unit){return unit==='C'?value:unit==='F'?value*9/5+32:value+273.15;}
+function updateUnits(){
+  const category=byId('unitCategory').value;
+  const input=numberValue('unitInput');
+  const from=unitRecord(category,byId('unitFrom').value);
+  const to=unitRecord(category,byId('unitTo').value);
+  if(!Number.isFinite(input)||!from||!to){showError('unitError','Enter a valid value and select both units.');return;}
+  showError('unitError','');
+
+  const output=category==='temperature'
+    ? fromCelsius(toCelsius(input,from[0]),to[0])
+    : input*from[3]/to[3];
+
+  const formatted=Number(output.toPrecision(7)).toLocaleString(undefined,{maximumFractionDigits:8});
+  setText('unitResult',formatted);
+  setText('unitResultLabel',to[1]);
+  setText('unitInputTile',input.toLocaleString()+' '+from[2]);
+  setText('unitOutputTile',formatted+' '+to[2]);
+  setText('unitCategoryTile',unitDefinitions[category].label);
 }
-function fromCelsius(value,unit){
-  if(unit==='C')return value;
-  if(unit==='F')return value*9/5+32;
-  return value+273.15;
-}
-function updateUnitConverter(){
-  const category=document.getElementById('unitCategory').value;
-  const input=numericValue('unitInput');
-  const fromKey=document.getElementById('unitFrom').value;
-  const toKey=document.getElementById('unitTo').value;
-  const def=unitDefinitions[category];
-  if(!Number.isFinite(input)||!def.units[fromKey]||!def.units[toKey]){
-    setUtilityError('unitError','Enter a valid value and select both units.');
-    return;
-  }
-  setUtilityError('unitError','');
-  let output;
-  if(category==='temperature')output=fromCelsius(toCelsius(input,fromKey),toKey);
-  else output=input*def.units[fromKey].factor/def.units[toKey].factor;
-  const formatted=Number(output.toPrecision(6)).toLocaleString(undefined,{maximumFractionDigits:8});
-  document.getElementById('unitResult').textContent=formatted;
-  document.getElementById('unitResultLabel').textContent=def.units[toKey].name;
-  document.getElementById('unitInputTile').textContent=input.toLocaleString()+' '+def.units[fromKey].symbol;
-  document.getElementById('unitOutputTile').textContent=formatted+' '+def.units[toKey].symbol;
-  document.getElementById('unitCategoryTile').textContent=def.label;
-}
+
 function updateDilution(){
-  const stock=numericValue('dilStock');
-  const target=numericValue('dilTarget');
-  const finalVolume=numericValue('dilFinal');
-  const unit=document.getElementById('dilUnit').value;
+  const stock=numberValue('dilStock');
+  const target=numberValue('dilTarget');
+  const finalVolume=numberValue('dilFinal');
+  const unit=byId('dilUnit').value;
+
   if(!Number.isFinite(stock)||!Number.isFinite(target)||!Number.isFinite(finalVolume)||stock<=0||target<0||finalVolume<0){
-    setUtilityError('dilError','Enter valid positive concentrations and final volume.');
+    showError('dilError','Enter valid positive concentrations and final volume.');
     return;
   }
   if(target>stock){
-    setUtilityError('dilError','Target concentration cannot exceed stock concentration.');
+    showError('dilError','Target concentration cannot exceed stock concentration.');
     return;
   }
-  setUtilityError('dilError','');
-  const stockVolume=stock===0?0:(target*finalVolume/stock);
+  showError('dilError','');
+
+  const stockVolume=target*finalVolume/stock;
   const water=Math.max(0,finalVolume-stockVolume);
   const ratio=target===0?Infinity:(stock/target)-1;
-  const fmt=v=>v.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:3});
-  document.getElementById('dilStockVolume').textContent=fmt(stockVolume)+' '+unit;
-  document.getElementById('dilWaterVolume').textContent='Add '+fmt(water)+' '+unit+' water';
-  document.getElementById('dilStockTile').textContent=fmt(stockVolume)+' '+unit;
-  document.getElementById('dilWaterTile').textContent=fmt(water)+' '+unit;
-  document.getElementById('dilFinalTile').textContent=fmt(finalVolume)+' '+unit;
-  document.getElementById('dilRatioTile').textContent=target===0?'No stock required':'1 : '+ratio.toFixed(2);
+  const format=function(v){return v.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:3});};
+
+  setText('dilStockVolume',format(stockVolume)+' '+unit);
+  setText('dilWaterVolume','Add '+format(water)+' '+unit+' water');
+  setText('dilStockTile',format(stockVolume)+' '+unit);
+  setText('dilWaterTile',format(water)+' '+unit);
+  setText('dilFinalTile',format(finalVolume)+' '+unit);
+  setText('dilRatioTile',target===0?'No stock required':'1 : '+ratio.toFixed(2));
 }
-['lsiTemp','lsiPH','lsiTA','lsiCYA','lsiCH','lsiTDS'].forEach(id=>document.getElementById(id).addEventListener('input',updateLSI));
-document.getElementById('unitCategory').addEventListener('change',populateUnitMenus);
-['unitInput','unitFrom','unitTo'].forEach(id=>document.getElementById(id).addEventListener('input',updateUnitConverter));
-['unitFrom','unitTo'].forEach(id=>document.getElementById(id).addEventListener('change',updateUnitConverter));
-['dilStock','dilTarget','dilFinal','dilUnit'].forEach(id=>{
-  document.getElementById(id).addEventListener(id==='dilUnit'?'change':'input',updateDilution);
+
+function refreshClock(){
+  const now=new Date();
+  setText('headerDate',now.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}));
+  setText('headerTime',now.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'}));
+}
+function refreshOnline(){
+  setText('onlineStatus',navigator.onLine?'System Online':'Offline Mode');
+}
+
+function bind(ids,events,handler){
+  ids.forEach(function(id){
+    const node=byId(id);
+    if(!node)return;
+    events.forEach(function(eventName){node.addEventListener(eventName,handler);});
+  });
+}
+
+bind(['sodaPool','currentPH'],['input','change'],updateSoda);
+bind(['fcPool','desiredFC'],['input','change'],updateFC);
+bind(['cyaPool','currentCYA'],['input','change'],updateCYA);
+bind(['dechlorPool','dechlorCurrent','dechlorGoal'],['input','change'],updateDechlor);
+bind(['calPool','calCurrent','calGoal','calProduct'],['input','change'],updateCalHypo);
+bind(['alkPool','alkCurrent','alkGoal'],['input','change'],updateAlkalinity);
+bind(['lsiTemp','lsiPH','lsiTA','lsiCYA','lsiCH','lsiTDS'],['input','change'],updateLSI);
+bind(['unitInput','unitFrom','unitTo'],['input','change'],updateUnits);
+bind(['dilStock','dilTarget','dilFinal','dilUnit'],['input','change'],updateDilution);
+
+byId('unitCategory').addEventListener('change',populateUnits);
+document.querySelectorAll('.utility-tab').forEach(function(button){
+  button.type='button';
+  button.addEventListener('click',function(event){
+    event.preventDefault();
+    showUtility(button.dataset.utility);
+    if(button.dataset.utility==='units')populateUnits();
+  });
 });
-populateUnitMenus();
+
+populateUnits();
+updateSoda();
+updateFC();
+updateCYA();
+updateDechlor();
+updateCalHypo();
+updateAlkalinity();
 updateLSI();
 updateDilution();
+showUtility('lsi');
+showTab('home');
+refreshClock();
+refreshOnline();
 
-function updateHeaderClock(){
-  const now=new Date();
-  const dateOptions={month:'short',day:'numeric',year:'numeric'};
-  const timeOptions={hour:'numeric',minute:'2-digit'};
-  const d=document.getElementById('headerDate');
-  const t=document.getElementById('headerTime');
-  if(d)d.textContent=now.toLocaleDateString(undefined,dateOptions);
-  if(t)t.textContent=now.toLocaleTimeString(undefined,timeOptions);
-}
-function updateOnlineState(){
-  const s=document.getElementById('onlineStatus');
-  const dot=document.querySelector('.online-dot');
-  if(!s||!dot)return;
-  const online=navigator.onLine;
-  s.textContent=online?'System Online':'Offline Mode';
-  dot.style.background=online?'#39dc4c':'#f5a623';
-}
-updateHeaderClock();
-updateOnlineState();
-setInterval(updateHeaderClock,30000);
-window.addEventListener('online',updateOnlineState);
-window.addEventListener('offline',updateOnlineState);
+setInterval(refreshClock,15000);
+window.addEventListener('online',refreshOnline);
+window.addEventListener('offline',refreshOnline);
+window.addEventListener('pageshow',function(){
+  refreshClock();
+  updateSoda(); updateFC(); updateCYA(); updateDechlor();
+  updateCalHypo(); updateAlkalinity(); updateLSI(); updateUnits(); updateDilution();
+});
 
 if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){
   window.addEventListener('load',function(){
-    navigator.serviceWorker.register('./service-worker.js?build=v9',{updateViaCache:'none'})
-      .then(function(reg){ return reg.update(); })
+    navigator.serviceWorker.register('./service-worker.js?build=v10',{updateViaCache:'none'})
+      .then(function(registration){return registration.update();})
       .catch(function(){});
   });
 }
-})();
-</script>
-
-<script>
-(function(){
-  'use strict';
-
-  function activateUtility(name){
-    var panes = document.querySelectorAll('.utility-workspace');
-    var tabs = document.querySelectorAll('.utility-tab');
-
-    for(var i=0;i<panes.length;i++){
-      var shouldShow = panes[i].id === name + 'Utility';
-      panes[i].classList.toggle('active', shouldShow);
-      panes[i].hidden = !shouldShow;
-    }
-
-    for(var j=0;j<tabs.length;j++){
-      var selected = tabs[j].getAttribute('data-utility') === name;
-      tabs[j].classList.toggle('active', selected);
-      tabs[j].setAttribute('aria-selected', selected ? 'true' : 'false');
-    }
-
-    try{ localStorage.setItem('swUtilityTab', name); }catch(e){}
-  }
-
-  window.showUtility = activateUtility;
-
-  var utilityTabs = document.querySelectorAll('.utility-tab');
-  for(var i=0;i<utilityTabs.length;i++){
-    utilityTabs[i].onclick = function(event){
-      event.preventDefault();
-      event.stopPropagation();
-      activateUtility(this.getAttribute('data-utility'));
-    };
-  }
-
-  var savedUtility = 'lsi';
-  try{
-    var candidate = localStorage.getItem('swUtilityTab');
-    if(candidate === 'lsi' || candidate === 'units' || candidate === 'dilution'){
-      savedUtility = candidate;
-    }
-  }catch(e){}
-  activateUtility(savedUtility);
-
-  var appearanceMedia = window.matchMedia
-    ? window.matchMedia('(prefers-color-scheme: light)')
-    : {matches:false};
-
-  function resolveTheme(selection){
-    if(selection === 'auto'){
-      return appearanceMedia.matches ? 'light' : 'dark';
-    }
-    return selection === 'light' ? 'light' : 'dark';
-  }
-
-  function setTheme(selection){
-    if(selection !== 'light' && selection !== 'dark' && selection !== 'auto'){
-      selection = 'auto';
-    }
-
-    var resolved = resolveTheme(selection);
-    var light = resolved === 'light';
-
-    document.body.classList.toggle('light-mode', light);
-    document.documentElement.classList.toggle('light-mode', light);
-    document.documentElement.style.colorScheme = resolved;
-
-    var values = ['light','dark','auto'];
-    for(var i=0;i<values.length;i++){
-      var id = 'theme' + values[i].charAt(0).toUpperCase() + values[i].slice(1);
-      var input = document.getElementById(id);
-      if(input){
-        input.checked = values[i] === selection;
-      }
-    }
-
-    var meta = document.querySelector('meta[name="theme-color"]');
-    if(meta){
-      meta.setAttribute('content', light ? '#edf4f9' : '#041b3d');
-    }
-
-    try{ localStorage.setItem('swChemTheme', selection); }catch(e){}
-  }
-
-  window.applyAppTheme = setTheme;
-
-  var themeInputs = document.querySelectorAll('input[name="appTheme"]');
-  for(var k=0;k<themeInputs.length;k++){
-    themeInputs[k].onchange = function(){
-      if(this.checked){
-        setTheme(this.value);
-      }
-    };
-
-    var associatedLabel = document.querySelector('label[for="' + themeInputs[k].id + '"]');
-    if(associatedLabel){
-      associatedLabel.onclick = function(event){
-        event.preventDefault();
-        var input = document.getElementById(this.getAttribute('for'));
-        if(input){
-          input.checked = true;
-          setTheme(input.value);
-        }
-      };
-    }
-  }
-
-  var savedTheme = 'auto';
-  try{
-    var storedTheme = localStorage.getItem('swChemTheme');
-    if(storedTheme === 'light' || storedTheme === 'dark' || storedTheme === 'auto'){
-      savedTheme = storedTheme;
-    }
-  }catch(e){}
-  setTheme(savedTheme);
-
-  function followSystemTheme(){
-    var current = 'auto';
-    try{ current = localStorage.getItem('swChemTheme') || 'auto'; }catch(e){}
-    if(current === 'auto'){
-      setTheme('auto');
-    }
-  }
-
-  if(appearanceMedia.addEventListener){
-    appearanceMedia.addEventListener('change', followSystemTheme);
-  }else if(appearanceMedia.addListener){
-    appearanceMedia.addListener(followSystemTheme);
-  }
-})();
-</script>
-
-
-<script>
-(function(){
-  'use strict';
-
-  /* ---------------- Header clock ---------------- */
-  function refreshHeaderClock(){
-    var now = new Date();
-    var dateNode = document.getElementById('headerDate');
-    var timeNode = document.getElementById('headerTime');
-
-    if(dateNode){
-      try{
-        dateNode.textContent = new Intl.DateTimeFormat(undefined,{
-          month:'short',
-          day:'numeric',
-          year:'numeric'
-        }).format(now);
-      }catch(error){
-        dateNode.textContent =
-          (now.getMonth()+1) + '/' + now.getDate() + '/' + now.getFullYear();
-      }
-    }
-
-    if(timeNode){
-      try{
-        timeNode.textContent = new Intl.DateTimeFormat(undefined,{
-          hour:'numeric',
-          minute:'2-digit'
-        }).format(now);
-      }catch(error){
-        var hours = now.getHours();
-        var minutes = String(now.getMinutes()).padStart(2,'0');
-        var suffix = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12 || 12;
-        timeNode.textContent = hours + ':' + minutes + ' ' + suffix;
-      }
-    }
-  }
-
-  refreshHeaderClock();
-  window.setInterval(refreshHeaderClock, 15000);
-  document.addEventListener('visibilitychange', function(){
-    if(!document.hidden) refreshHeaderClock();
-  });
-  window.addEventListener('pageshow', refreshHeaderClock);
-
-  /* ---------------- Appearance ---------------- */
-  function applyV9Theme(theme){
-    var selection = theme === 'light' ? 'light' : 'dark';
-    var isLight = selection === 'light';
-
-    document.body.classList.toggle('light-mode', isLight);
-    document.documentElement.classList.toggle('light-mode', isLight);
-    document.documentElement.style.colorScheme = selection;
-
-    var darkControl = document.getElementById('themeDark');
-    var lightControl = document.getElementById('themeLight');
-    if(darkControl) darkControl.checked = !isLight;
-    if(lightControl) lightControl.checked = isLight;
-
-    var themeMeta = document.querySelector('meta[name="theme-color"]');
-    if(themeMeta){
-      themeMeta.setAttribute('content', isLight ? '#edf4f9' : '#041b3d');
-    }
-
-    try{
-      localStorage.setItem('swChemTheme', selection);
-    }catch(error){}
-  }
-
-  window.applyAppTheme = applyV9Theme;
-
-  var selectedTheme = 'dark';
-  try{
-    var savedTheme = localStorage.getItem('swChemTheme');
-    if(savedTheme === 'light' || savedTheme === 'dark'){
-      selectedTheme = savedTheme;
-    }else{
-      /* Old "auto" selection is intentionally migrated to Dark. */
-      localStorage.setItem('swChemTheme','dark');
-    }
-  }catch(error){}
-
-  var themeControls = document.querySelectorAll('input[name="appTheme"]');
-  for(var themeIndex=0; themeIndex<themeControls.length; themeIndex++){
-    themeControls[themeIndex].onchange = function(){
-      if(this.checked) applyV9Theme(this.value);
-    };
-
-    var themeLabel = document.querySelector(
-      'label[for="' + themeControls[themeIndex].id + '"]'
-    );
-    if(themeLabel){
-      themeLabel.onclick = function(event){
-        event.preventDefault();
-        var control = document.getElementById(this.getAttribute('for'));
-        if(control){
-          control.checked = true;
-          applyV9Theme(control.value);
-        }
-      };
-    }
-  }
-
-  applyV9Theme(selectedTheme);
-
-  /* ---------------- Unit converter ---------------- */
-  var v9Units = {
-    volume: {
-      label:'Volume',
-      units:[
-        ['gal','US gallon','gal',3.785411784],
-        ['L','liter','L',1],
-        ['mL','milliliter','mL',0.001],
-        ['floz','US fluid ounce','fl oz',0.0295735295625],
-        ['qt','US quart','qt',0.946352946],
-        ['ft3','cubic foot','ft³',28.316846592]
-      ]
-    },
-    mass: {
-      label:'Mass',
-      units:[
-        ['lb','pound','lb',0.45359237],
-        ['oz','ounce','oz',0.028349523125],
-        ['kg','kilogram','kg',1],
-        ['g','gram','g',0.001]
-      ]
-    },
-    flow: {
-      label:'Flow Rate',
-      units:[
-        ['gpm','gallons per minute','gpm',3.785411784],
-        ['gph','gallons per hour','gph',0.0630901964],
-        ['lpm','liters per minute','L/min',1],
-        ['lps','liters per second','L/s',60],
-        ['m3h','cubic meters per hour','m³/h',16.666666667]
-      ]
-    },
-    temperature: {
-      label:'Temperature',
-      units:[
-        ['F','degrees Fahrenheit','°F',null],
-        ['C','degrees Celsius','°C',null],
-        ['K','kelvin','K',null]
-      ]
-    },
-    pressure: {
-      label:'Pressure',
-      units:[
-        ['psi','pounds per square inch','psi',6.894757293],
-        ['kPa','kilopascal','kPa',1],
-        ['bar','bar','bar',100],
-        ['inHg','inch of mercury','inHg',3.386389]
-      ]
-    }
-  };
-
-  function escapeUnitText(text){
-    return String(text)
-      .replace(/&/g,'&amp;')
-      .replace(/</g,'&lt;')
-      .replace(/>/g,'&gt;')
-      .replace(/"/g,'&quot;');
-  }
-
-  function findUnit(category,key){
-    var list = v9Units[category] ? v9Units[category].units : [];
-    for(var i=0;i<list.length;i++){
-      if(list[i][0] === key) return list[i];
-    }
-    return null;
-  }
-
-  function populateV9UnitMenus(){
-    var categoryNode = document.getElementById('unitCategory');
-    var fromNode = document.getElementById('unitFrom');
-    var toNode = document.getElementById('unitTo');
-    if(!categoryNode || !fromNode || !toNode) return;
-
-    var category = categoryNode.value;
-    var definition = v9Units[category] || v9Units.volume;
-    var oldFrom = fromNode.value;
-    var oldTo = toNode.value;
-    var markup = '';
-
-    for(var i=0;i<definition.units.length;i++){
-      markup += '<option value="' +
-        escapeUnitText(definition.units[i][0]) + '">' +
-        escapeUnitText(definition.units[i][1]) +
-        '</option>';
-    }
-
-    fromNode.innerHTML = markup;
-    toNode.innerHTML = markup;
-
-    if(findUnit(category,oldFrom)){
-      fromNode.value = oldFrom;
-    }else{
-      fromNode.selectedIndex = 0;
-    }
-
-    if(findUnit(category,oldTo)){
-      toNode.value = oldTo;
-    }else{
-      toNode.selectedIndex = definition.units.length > 1 ? 1 : 0;
-    }
-
-    if(fromNode.value === toNode.value && definition.units.length > 1){
-      toNode.selectedIndex = fromNode.selectedIndex === 0 ? 1 : 0;
-    }
-
-    updateV9UnitConversion();
-  }
-
-  function toCelsiusV9(value,unit){
-    if(unit === 'C') return value;
-    if(unit === 'F') return (value - 32) * 5 / 9;
-    return value - 273.15;
-  }
-
-  function fromCelsiusV9(value,unit){
-    if(unit === 'C') return value;
-    if(unit === 'F') return value * 9 / 5 + 32;
-    return value + 273.15;
-  }
-
-  function updateV9UnitConversion(){
-    var categoryNode = document.getElementById('unitCategory');
-    var inputNode = document.getElementById('unitInput');
-    var fromNode = document.getElementById('unitFrom');
-    var toNode = document.getElementById('unitTo');
-    if(!categoryNode || !inputNode || !fromNode || !toNode) return;
-
-    var category = categoryNode.value;
-    var definition = v9Units[category] || v9Units.volume;
-    var input = parseFloat(inputNode.value);
-    var fromUnit = findUnit(category,fromNode.value);
-    var toUnit = findUnit(category,toNode.value);
-    var errorNode = document.getElementById('unitError');
-
-    if(!Number.isFinite(input) || !fromUnit || !toUnit){
-      if(errorNode){
-        errorNode.textContent = 'Enter a valid value and select both units.';
-        errorNode.classList.add('show');
-      }
-      return;
-    }
-
-    if(errorNode) errorNode.classList.remove('show');
-
-    var output;
-    if(category === 'temperature'){
-      output = fromCelsiusV9(toCelsiusV9(input,fromUnit[0]),toUnit[0]);
-    }else{
-      output = input * fromUnit[3] / toUnit[3];
-    }
-
-    var formatted = Number(output.toPrecision(7)).toLocaleString(undefined,{
-      maximumFractionDigits:8
-    });
-
-    var resultNode = document.getElementById('unitResult');
-    var resultLabel = document.getElementById('unitResultLabel');
-    var inputTile = document.getElementById('unitInputTile');
-    var outputTile = document.getElementById('unitOutputTile');
-    var categoryTile = document.getElementById('unitCategoryTile');
-
-    if(resultNode) resultNode.textContent = formatted;
-    if(resultLabel) resultLabel.textContent = toUnit[1];
-    if(inputTile) inputTile.textContent =
-      input.toLocaleString() + ' ' + fromUnit[2];
-    if(outputTile) outputTile.textContent =
-      formatted + ' ' + toUnit[2];
-    if(categoryTile) categoryTile.textContent = definition.label;
-  }
-
-  var categoryControl = document.getElementById('unitCategory');
-  var inputControl = document.getElementById('unitInput');
-  var fromControl = document.getElementById('unitFrom');
-  var toControl = document.getElementById('unitTo');
-
-  if(categoryControl){
-    categoryControl.onchange = populateV9UnitMenus;
-  }
-  if(inputControl){
-    inputControl.oninput = updateV9UnitConversion;
-    inputControl.onchange = updateV9UnitConversion;
-  }
-  if(fromControl){
-    fromControl.onchange = updateV9UnitConversion;
-  }
-  if(toControl){
-    toControl.onchange = updateV9UnitConversion;
-  }
-
-  populateV9UnitMenus();
-
-  /* Re-populate after utility tab changes and Safari page restoration. */
-  document.addEventListener('click',function(event){
-    var tab = event.target.closest ? event.target.closest('.utility-tab') : null;
-    if(tab && tab.getAttribute('data-utility') === 'units'){
-      window.setTimeout(populateV9UnitMenus,0);
-    }
-  });
-  window.addEventListener('pageshow',function(){
-    refreshHeaderClock();
-    populateV9UnitMenus();
-  });
 })();
 </script>
 

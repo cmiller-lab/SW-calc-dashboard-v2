@@ -844,48 +844,6 @@ body.light-mode .utility-tab.active{
   padding-bottom:max(26px,env(safe-area-inset-bottom));
 }
 
-
-/* ===== v9 fixes ===== */
-.theme-options-two{
-  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-}
-
-/* Explicit light-mode styling for the final two calculator tiles. */
-body.light-mode .primary-calculator-grid > .calhypo-tile,
-html.light-mode body .primary-calculator-grid > .calhypo-tile{
-  background:
-    radial-gradient(circle at 50% 22%,rgba(86,199,235,.24),transparent 29%),
-    linear-gradient(150deg,#ddf6fc 0%,#c7eaf4 56%,#b1dce9 100%) !important;
-  border-color:#52aeca !important;
-  color:#11799d !important;
-  box-shadow:0 12px 25px rgba(55,87,111,.15),inset 0 1px rgba(255,255,255,.88) !important;
-}
-body.light-mode .primary-calculator-grid > .alkalinity-tile,
-html.light-mode body .primary-calculator-grid > .alkalinity-tile{
-  background:
-    radial-gradient(circle at 50% 22%,rgba(244,214,98,.25),transparent 29%),
-    linear-gradient(150deg,#fff5ce 0%,#f2e2a6 57%,#e3cf7b 100%) !important;
-  border-color:#c7a83a !important;
-  color:#806107 !important;
-  box-shadow:0 12px 25px rgba(55,87,111,.15),inset 0 1px rgba(255,255,255,.88) !important;
-}
-body.light-mode .calhypo-tile .launch-title,
-body.light-mode .calhypo-tile .launch-action,
-body.light-mode .calhypo-tile .launch-desc{
-  color:#176d89 !important;
-  opacity:1 !important;
-}
-body.light-mode .alkalinity-tile .launch-title,
-body.light-mode .alkalinity-tile .launch-action,
-body.light-mode .alkalinity-tile .launch-desc{
-  color:#725605 !important;
-  opacity:1 !important;
-}
-body.light-mode .calhypo-tile::before,
-body.light-mode .alkalinity-tile::before{
-  opacity:.10 !important;
-}
-
 </style>
 </head>
 <body>
@@ -1478,22 +1436,24 @@ body.light-mode .alkalinity-tile::before{
     <div class="formula-card"><h3>Formula</h3><div>M₁V₁ = M₂V₂</div></div>
   </div>
 </section>
-
 <section class="theme-panel" aria-label="Appearance">
   <div class="theme-panel-title">Appearance</div>
-  <div class="theme-options theme-options-two">
-    <div class="theme-option">
-      <input type="radio" name="appTheme" id="themeDark" value="dark" checked>
-      <label for="themeDark">🌙 Dark</label>
-    </div>
+  <div class="theme-options theme-options-three">
     <div class="theme-option">
       <input type="radio" name="appTheme" id="themeLight" value="light">
       <label for="themeLight">☀️ Light</label>
     </div>
+    <div class="theme-option">
+      <input type="radio" name="appTheme" id="themeDark" value="dark">
+      <label for="themeDark">🌙 Dark</label>
+    </div>
+    <div class="theme-option">
+      <input type="radio" name="appTheme" id="themeAuto" value="auto" checked>
+      <label for="themeAuto">📱 Auto</label>
+    </div>
   </div>
-  <div class="theme-note">Your selection is saved on this device.</div>
+  <div class="theme-note">Auto follows the appearance setting on this device.</div>
 </section>
-
 
 <div class="footer">Cory Miller is my lord and savior</div>
 </div>
@@ -1907,7 +1867,7 @@ window.addEventListener('offline',updateOnlineState);
 
 if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){
   window.addEventListener('load',function(){
-    navigator.serviceWorker.register('./service-worker.js?build=v9',{updateViaCache:'none'})
+    navigator.serviceWorker.register('./service-worker.js?build=v8',{updateViaCache:'none'})
       .then(function(reg){ return reg.update(); })
       .catch(function(){});
   });
@@ -2043,318 +2003,6 @@ if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){
   }else if(appearanceMedia.addListener){
     appearanceMedia.addListener(followSystemTheme);
   }
-})();
-</script>
-
-
-<script>
-(function(){
-  'use strict';
-
-  /* ---------------- Header clock ---------------- */
-  function refreshHeaderClock(){
-    var now = new Date();
-    var dateNode = document.getElementById('headerDate');
-    var timeNode = document.getElementById('headerTime');
-
-    if(dateNode){
-      try{
-        dateNode.textContent = new Intl.DateTimeFormat(undefined,{
-          month:'short',
-          day:'numeric',
-          year:'numeric'
-        }).format(now);
-      }catch(error){
-        dateNode.textContent =
-          (now.getMonth()+1) + '/' + now.getDate() + '/' + now.getFullYear();
-      }
-    }
-
-    if(timeNode){
-      try{
-        timeNode.textContent = new Intl.DateTimeFormat(undefined,{
-          hour:'numeric',
-          minute:'2-digit'
-        }).format(now);
-      }catch(error){
-        var hours = now.getHours();
-        var minutes = String(now.getMinutes()).padStart(2,'0');
-        var suffix = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12 || 12;
-        timeNode.textContent = hours + ':' + minutes + ' ' + suffix;
-      }
-    }
-  }
-
-  refreshHeaderClock();
-  window.setInterval(refreshHeaderClock, 15000);
-  document.addEventListener('visibilitychange', function(){
-    if(!document.hidden) refreshHeaderClock();
-  });
-  window.addEventListener('pageshow', refreshHeaderClock);
-
-  /* ---------------- Appearance ---------------- */
-  function applyV9Theme(theme){
-    var selection = theme === 'light' ? 'light' : 'dark';
-    var isLight = selection === 'light';
-
-    document.body.classList.toggle('light-mode', isLight);
-    document.documentElement.classList.toggle('light-mode', isLight);
-    document.documentElement.style.colorScheme = selection;
-
-    var darkControl = document.getElementById('themeDark');
-    var lightControl = document.getElementById('themeLight');
-    if(darkControl) darkControl.checked = !isLight;
-    if(lightControl) lightControl.checked = isLight;
-
-    var themeMeta = document.querySelector('meta[name="theme-color"]');
-    if(themeMeta){
-      themeMeta.setAttribute('content', isLight ? '#edf4f9' : '#041b3d');
-    }
-
-    try{
-      localStorage.setItem('swChemTheme', selection);
-    }catch(error){}
-  }
-
-  window.applyAppTheme = applyV9Theme;
-
-  var selectedTheme = 'dark';
-  try{
-    var savedTheme = localStorage.getItem('swChemTheme');
-    if(savedTheme === 'light' || savedTheme === 'dark'){
-      selectedTheme = savedTheme;
-    }else{
-      /* Old "auto" selection is intentionally migrated to Dark. */
-      localStorage.setItem('swChemTheme','dark');
-    }
-  }catch(error){}
-
-  var themeControls = document.querySelectorAll('input[name="appTheme"]');
-  for(var themeIndex=0; themeIndex<themeControls.length; themeIndex++){
-    themeControls[themeIndex].onchange = function(){
-      if(this.checked) applyV9Theme(this.value);
-    };
-
-    var themeLabel = document.querySelector(
-      'label[for="' + themeControls[themeIndex].id + '"]'
-    );
-    if(themeLabel){
-      themeLabel.onclick = function(event){
-        event.preventDefault();
-        var control = document.getElementById(this.getAttribute('for'));
-        if(control){
-          control.checked = true;
-          applyV9Theme(control.value);
-        }
-      };
-    }
-  }
-
-  applyV9Theme(selectedTheme);
-
-  /* ---------------- Unit converter ---------------- */
-  var v9Units = {
-    volume: {
-      label:'Volume',
-      units:[
-        ['gal','US gallon','gal',3.785411784],
-        ['L','liter','L',1],
-        ['mL','milliliter','mL',0.001],
-        ['floz','US fluid ounce','fl oz',0.0295735295625],
-        ['qt','US quart','qt',0.946352946],
-        ['ft3','cubic foot','ft³',28.316846592]
-      ]
-    },
-    mass: {
-      label:'Mass',
-      units:[
-        ['lb','pound','lb',0.45359237],
-        ['oz','ounce','oz',0.028349523125],
-        ['kg','kilogram','kg',1],
-        ['g','gram','g',0.001]
-      ]
-    },
-    flow: {
-      label:'Flow Rate',
-      units:[
-        ['gpm','gallons per minute','gpm',3.785411784],
-        ['gph','gallons per hour','gph',0.0630901964],
-        ['lpm','liters per minute','L/min',1],
-        ['lps','liters per second','L/s',60],
-        ['m3h','cubic meters per hour','m³/h',16.666666667]
-      ]
-    },
-    temperature: {
-      label:'Temperature',
-      units:[
-        ['F','degrees Fahrenheit','°F',null],
-        ['C','degrees Celsius','°C',null],
-        ['K','kelvin','K',null]
-      ]
-    },
-    pressure: {
-      label:'Pressure',
-      units:[
-        ['psi','pounds per square inch','psi',6.894757293],
-        ['kPa','kilopascal','kPa',1],
-        ['bar','bar','bar',100],
-        ['inHg','inch of mercury','inHg',3.386389]
-      ]
-    }
-  };
-
-  function escapeUnitText(text){
-    return String(text)
-      .replace(/&/g,'&amp;')
-      .replace(/</g,'&lt;')
-      .replace(/>/g,'&gt;')
-      .replace(/"/g,'&quot;');
-  }
-
-  function findUnit(category,key){
-    var list = v9Units[category] ? v9Units[category].units : [];
-    for(var i=0;i<list.length;i++){
-      if(list[i][0] === key) return list[i];
-    }
-    return null;
-  }
-
-  function populateV9UnitMenus(){
-    var categoryNode = document.getElementById('unitCategory');
-    var fromNode = document.getElementById('unitFrom');
-    var toNode = document.getElementById('unitTo');
-    if(!categoryNode || !fromNode || !toNode) return;
-
-    var category = categoryNode.value;
-    var definition = v9Units[category] || v9Units.volume;
-    var oldFrom = fromNode.value;
-    var oldTo = toNode.value;
-    var markup = '';
-
-    for(var i=0;i<definition.units.length;i++){
-      markup += '<option value="' +
-        escapeUnitText(definition.units[i][0]) + '">' +
-        escapeUnitText(definition.units[i][1]) +
-        '</option>';
-    }
-
-    fromNode.innerHTML = markup;
-    toNode.innerHTML = markup;
-
-    if(findUnit(category,oldFrom)){
-      fromNode.value = oldFrom;
-    }else{
-      fromNode.selectedIndex = 0;
-    }
-
-    if(findUnit(category,oldTo)){
-      toNode.value = oldTo;
-    }else{
-      toNode.selectedIndex = definition.units.length > 1 ? 1 : 0;
-    }
-
-    if(fromNode.value === toNode.value && definition.units.length > 1){
-      toNode.selectedIndex = fromNode.selectedIndex === 0 ? 1 : 0;
-    }
-
-    updateV9UnitConversion();
-  }
-
-  function toCelsiusV9(value,unit){
-    if(unit === 'C') return value;
-    if(unit === 'F') return (value - 32) * 5 / 9;
-    return value - 273.15;
-  }
-
-  function fromCelsiusV9(value,unit){
-    if(unit === 'C') return value;
-    if(unit === 'F') return value * 9 / 5 + 32;
-    return value + 273.15;
-  }
-
-  function updateV9UnitConversion(){
-    var categoryNode = document.getElementById('unitCategory');
-    var inputNode = document.getElementById('unitInput');
-    var fromNode = document.getElementById('unitFrom');
-    var toNode = document.getElementById('unitTo');
-    if(!categoryNode || !inputNode || !fromNode || !toNode) return;
-
-    var category = categoryNode.value;
-    var definition = v9Units[category] || v9Units.volume;
-    var input = parseFloat(inputNode.value);
-    var fromUnit = findUnit(category,fromNode.value);
-    var toUnit = findUnit(category,toNode.value);
-    var errorNode = document.getElementById('unitError');
-
-    if(!Number.isFinite(input) || !fromUnit || !toUnit){
-      if(errorNode){
-        errorNode.textContent = 'Enter a valid value and select both units.';
-        errorNode.classList.add('show');
-      }
-      return;
-    }
-
-    if(errorNode) errorNode.classList.remove('show');
-
-    var output;
-    if(category === 'temperature'){
-      output = fromCelsiusV9(toCelsiusV9(input,fromUnit[0]),toUnit[0]);
-    }else{
-      output = input * fromUnit[3] / toUnit[3];
-    }
-
-    var formatted = Number(output.toPrecision(7)).toLocaleString(undefined,{
-      maximumFractionDigits:8
-    });
-
-    var resultNode = document.getElementById('unitResult');
-    var resultLabel = document.getElementById('unitResultLabel');
-    var inputTile = document.getElementById('unitInputTile');
-    var outputTile = document.getElementById('unitOutputTile');
-    var categoryTile = document.getElementById('unitCategoryTile');
-
-    if(resultNode) resultNode.textContent = formatted;
-    if(resultLabel) resultLabel.textContent = toUnit[1];
-    if(inputTile) inputTile.textContent =
-      input.toLocaleString() + ' ' + fromUnit[2];
-    if(outputTile) outputTile.textContent =
-      formatted + ' ' + toUnit[2];
-    if(categoryTile) categoryTile.textContent = definition.label;
-  }
-
-  var categoryControl = document.getElementById('unitCategory');
-  var inputControl = document.getElementById('unitInput');
-  var fromControl = document.getElementById('unitFrom');
-  var toControl = document.getElementById('unitTo');
-
-  if(categoryControl){
-    categoryControl.onchange = populateV9UnitMenus;
-  }
-  if(inputControl){
-    inputControl.oninput = updateV9UnitConversion;
-    inputControl.onchange = updateV9UnitConversion;
-  }
-  if(fromControl){
-    fromControl.onchange = updateV9UnitConversion;
-  }
-  if(toControl){
-    toControl.onchange = updateV9UnitConversion;
-  }
-
-  populateV9UnitMenus();
-
-  /* Re-populate after utility tab changes and Safari page restoration. */
-  document.addEventListener('click',function(event){
-    var tab = event.target.closest ? event.target.closest('.utility-tab') : null;
-    if(tab && tab.getAttribute('data-utility') === 'units'){
-      window.setTimeout(populateV9UnitMenus,0);
-    }
-  });
-  window.addEventListener('pageshow',function(){
-    refreshHeaderClock();
-    populateV9UnitMenus();
-  });
 })();
 </script>
 

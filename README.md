@@ -1,13 +1,10 @@
-# SeaWorld Water Chemistry Console v9
+# SeaWorld Water Chemistry Console v8
 
-## Fixes
-- Header date and time now initialize independently and refresh every 15 seconds.
-- Clock refreshes when the PWA returns from the background.
-- Manual Chlorination and Alkalinity tiles now receive complete light-mode styling.
-- Unit Converter From/To menus are populated by a Safari-safe fallback.
-- Dark mode is the default.
-- Auto appearance option has been removed.
-- Previous Auto preferences migrate to Dark.
-- PWA cache updated to v9.
+Fixes:
+- Unit Converter and Dilution utility tabs now use independent, touch-safe controls.
+- Light, Dark, and Auto modes now use a final defensive initialization layer.
+- Auto mode supports both modern and legacy Safari media-query listeners.
+- PWA cache version updated to v8 to remove stale scripts.
+- Footer text updated.
 
-Upload all files in this folder to the same GitHub Pages directory.
+Upload every file in this folder to the same GitHub Pages repository directory.
